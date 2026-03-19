@@ -1,7 +1,7 @@
 # 🚀 Get AI to Listen to You in 5 Minutes
 
 <p align="left">
-  <a href="README_zh.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
+  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
 </p>
 
 ## 🎯 You'll Get This

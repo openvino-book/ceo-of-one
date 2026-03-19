@@ -1,5 +1,5 @@
 <p align="left">
-  <a href="README_zh.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
+  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
 </p>
 
 <p align="center">
@@ -79,7 +79,7 @@ Real products built by real readers.
 
 → [See what one-person CEOs have built](showcase/)
 
-## 🇨🇳 [中文版 README](README_zh.md)
+## 🇨🇳 [中文版 README](README_zh-CN.md)
 
 ## Contributing
 

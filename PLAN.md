@@ -28,7 +28,7 @@
 ceo-of-one/
 ├── PRINCIPLES.md
 ├── README.md
-├── README_zh.md
+├── README_zh-CN.md
 ├── LICENSE
 ├── .gitignore
 ├── .github/
@@ -72,7 +72,7 @@ ceo-of-one/
 - Showcase 链接
 - License
 
-### 1.4 写 README_zh.md（中文版）
+### 1.4 写 README_zh-CN.md（中文版）
 内容同上，中文。
 
 ### 1.5 写 LICENSE（MIT）

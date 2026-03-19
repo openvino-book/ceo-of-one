@@ -83,8 +83,8 @@ OpenClaw 当你的 COO，Claude Code 当你的开发工程师。
 
 - 每个 README 和实验记录都必须有中英双语版本
 - 两个版本之间用 badge 形式的链接互相切换
-- 文件命名：`README.md`（英文）+ `README_zh.md`（中文）
-- 实验记录：`experiment.md`（英文）+ `experiment_zh.md`（中文）
+- 文件命名：`README.md`（英文）+ `README_zh-CN.md`（中文）
+- 实验记录：`experiment.md`（英文）+ `experiment_zh-CN.md`（中文）
 
 ---
 
@@ -191,7 +191,7 @@ CEO（你）
 ceo-of-one/
 ├── PRINCIPLES.md          ← 本文件
 ├── README.md              # 英文主 README
-├── README_zh.md           # 中文 README
+├── README_zh-CN.md           # 中文 README
 ├── LICENSE                # MIT
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
