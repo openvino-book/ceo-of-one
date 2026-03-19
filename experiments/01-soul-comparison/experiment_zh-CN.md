@@ -49,38 +49,44 @@
 | **软删除** | ❌ 无 | ✅ 有 | +功能 |
 | **自检** | ❌ 无 | ✅ 自动跑测试、发现 bug、修复 | +可靠性 |
 
-### 新增：对照组 C（真实 OpenClaw COO 流程）
+### 新增：对照组 C（真实 OpenClaw COO 流程，通过 acpx）
 
-> **这才是正确的流程：** CEO 说一句话 → OpenClaw（COO）扩展为结构化 prompt → Claude Code 执行 → OpenClaw 验收
+> **这才是正确的流程：** CEO 说一句话 → OpenClaw（COO）扩展为结构化 prompt → 通过 **acpx** 发给 Claude Code → acpx 返回结构化 JSON-RPC 输出 → OpenClaw 可程序化验收
 
 **CEO 的输入：** `"Build me a Todo REST API"`
 
-**OpenClaw（COO）自动生成了包含产品思维、质量标准、交付要求的完整结构化 prompt**——然后通过 `claude --permission-mode bypassPermissions --print` 发给 Claude Code。
+**OpenClaw（COO）通过 acpx 发送：**
+```bash
+acpx --approve-all --allowed-tools "Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS" claude exec "[COO prompt]"
+```
 
-| 指标 | 对照组 C（真实 COO 流程） |
-|------|------------------------|
-| **源文件数** | 8 个（6 代码 + 1 测试 + 1 中间件） |
-| **代码行数** | ~572 行（代码）+ ~289 行（测试）= ~861 行 |
-| **测试** | ✅ **25/25 通过** |
+| 指标 | 对照组 C（acpx COO 流程） |
+|------|--------------------------|
+| **源文件数** | 10 个（7 代码 + 1 测试 + 2 index 导出） |
+| **代码行数** | ~700 行（代码）+ ~371 行（测试）= ~1071 行 |
+| **测试** | ✅ **28/28 通过** |
 | **软删除** | ✅ 有（含 `deletedAt` 时间戳） |
-| **项目结构** | ✅ 规范：`src/controllers/`、`src/store/`、`src/middleware/`、`src/routes/` |
-| **自定义错误类** | ✅ 有 |
-| **耗时** | ~5.4 分钟 |
+| **项目结构** | ✅ 规范：`src/types/`、`src/store/`、`src/routes/` |
+| **自动修复** | ✅ 发现 1 个测试 bug，自动修复，重新跑通过 |
+| **耗时** | ~5.5 分钟 |
 | **CEO 付出** | **1 句话** |
+| **输出格式** | ✅ **结构化 JSON-RPC**（机器可读） |
 
 ### 三方对比
 
-| 指标 | A（无 COO） | B（prompt 内嵌 COO） | C（真实 COO 流程） |
-|------|-----------|---------------------|-------------------|
-| 测试 | 0 | 24 ✅ | **25 ✅** |
-| 代码行数 | 164 | ~624 | **~861** |
-| 项目结构 | 扁平 | 扁平 | **分层**（controllers/store/middleware/routes） |
-| 错误处理类 | 无 | 无 | ✅ **自定义错误类** |
-| 健康检查 | 无 | 无 | ✅ `/health` |
-| 耗时 | ~2 分钟 | ~4 分钟 | ~5.4 分钟 |
-| **CEO 付出** | 1 句话 | **1 段长 prompt** | **1 句话** |
+| 指标 | A（无 COO） | B（prompt 内嵌 COO） | C（**acpx COO 流程**） |
+|------|-----------|---------------------|------------------------|
+| 测试 | 0 | 24 ✅ | **28 ✅** |
+| 代码行数 | 164 | ~624 | **~1071** |
+| 项目结构 | 扁平 | 扁平 | **分层**（types/store/routes） |
+| 自动修 bug | 无 | ✅（1 个） | ✅ **（1 个测试 bug）** |
+| 耗时 | ~2 分钟 | ~4 分钟 | ~5.5 分钟 |
+| CEO 付出 | 1 句话 | **~200 词的长 prompt** | **1 句话** |
+| **输出格式** | ANSI 文本 | ANSI 文本 | ✅ **结构化 JSON-RPC** |
 
 **B 和 C 的关键区别：** B 中人类写了一段长长的结构化 prompt。C 中**人类只说了一句话**，OpenClaw（COO）自动生成了结构化 prompt。同样的质量，**CEO 零付出**。
+
+**为什么 acpx 至关重要：** acpx 提供了**结构化 JSON-RPC 输出**——工具调用、文件 diff、思考过程、测试结果——全部机器可读。这让 OpenClaw COO 能程序化验收 Claude Code 做了什么，而不是靠"读文本"。这是可靠自动化质量管控的基础。
 
 ## 关键观察
 

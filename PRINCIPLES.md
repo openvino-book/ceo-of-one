@@ -79,6 +79,14 @@ OpenClaw 当你的 COO，Claude Code 当你的开发工程师。
 - 每一章都在向这个目标推进
 - 每章开头的"你将收获"必须与这个终极目标有明确关联
 
+### 原则 7：只使用 acpx 方案
+
+- 本项目**只使用 acpx** 指挥 Claude Code，**禁止使用 coding-agent skill 的 `claude --print` 方案**
+- acpx 通过 ACP 协议提供结构化 JSON-RPC 输出，让 OpenClaw COO 能**程序化地**精确知道工程师做了什么（tool calls、diffs、测试结果）
+- `claude --print` 输出的是人类可读的 ANSI 文本，COO 无法可靠地程序化解读
+- 结构化信息是产品品质的保证——COO 能精确验收每个模块
+- 工具链：`acpx --approve-all --allowed-tools "..." claude exec "任务"`
+
 ### 原则 6：中英双语
 
 - 每个 README 和实验记录都必须有中英双语版本

@@ -47,11 +47,11 @@ You didn't write a technical prompt. You didn't specify TypeScript or Express or
 
 We tested three approaches. Same task: "Build a Todo REST API."
 
-| Approach | Who Wrote the Prompt? | Tests | Quality | CEO Effort |
-|----------|----------------------|-------|---------|------------|
-| **A: No COO** | You (bare sentence) | 0 | Minimal | 1 sentence |
-| **B: COO in prompt** | You (long structured prompt) | 24 ✅ | Good | ~200 words |
-| **C: Real COO Flow** | **OpenClaw (COO)** | **25 ✅** | **Best** | **1 sentence** |
+| Approach | Who Wrote the Prompt? | Tests | Quality | CEO Effort | Tool |
+|----------|----------------------|-------|---------|------------|------|
+| **A: No COO** | You (bare sentence) | 0 | Minimal | 1 sentence | acpx |
+| **B: COO in prompt** | You (long structured prompt) | 24 ✅ | Good | ~200 words | acpx |
+| **C: Real COO Flow** | **OpenClaw (COO)** | **28 ✅** | **Best** | **1 sentence** | **acpx** |
 
 See the full experiment: [experiments/01-soul-comparison/](../../experiments/01-soul-comparison/)
 
@@ -60,12 +60,12 @@ See the full experiment: [experiments/01-soul-comparison/](../../experiments/01-
 ### What Made the Difference
 
 The real COO flow added things even the "COO in prompt" approach missed:
-- **Organized project structure** (`controllers/`, `store/`, `middleware/`, `routes/`)
-- **Custom error classes** for clean error handling
-- **A health check endpoint** (`/health`) — the COO thought about production monitoring
-- **More test coverage** (25 tests vs 24)
+- **Organized project structure** (`types/`, `store/`, `routes/`)
+- **More thorough input validation** (trim whitespace, empty string check)
+- **More test coverage** (28 tests vs 24 — added edge cases like whitespace-only titles)
+- **Auto-fixed a test bug** (404 handler missing in test setup)
 
-**Why?** Because the COO doesn't just paste a template — it thinks about what YOUR product needs.
+**Why?** Because the COO doesn't just paste a template — it thinks about what YOUR product needs. And because **acpx provides structured output**, the COO can precisely track what Claude Code built and verify it programmatically.
 
 ---
 

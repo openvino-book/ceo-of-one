@@ -7,11 +7,11 @@ export interface Todo {
   deletedAt: Date | null;
 }
 
-export interface CreateTodoDto {
+export interface CreateTodoInput {
   title: string;
 }
 
-export interface UpdateTodoDto {
+export interface UpdateTodoInput {
   title?: string;
   completed?: boolean;
 }
@@ -22,4 +22,9 @@ export interface TodoResponse {
   completed: boolean;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface ApiError {
+  error: string;
+  message: string;
 }

@@ -54,41 +54,49 @@ A well-structured COO-style instruction produces significantly better results th
 | **Auto self-verification** | ❌ No | ✅ Ran tests, fixed bug | +reliability |
 | **Plan/tracking** | ✅ Basic | ✅ Detailed 6-step plan | +structure |
 
-### NEW: Control C (Real OpenClaw COO Flow)
+### NEW: Control C (Real OpenClaw COO Flow via acpx)
 
-> **This is the correct flow:** CEO says one sentence → OpenClaw (COO) expands into structured prompt → Claude Code executes → OpenClaw verifies.
+> **This is the correct flow:** CEO says one sentence → OpenClaw (COO) expands into structured prompt → sends to Claude Code via **acpx** → Claude Code executes → acpx provides structured JSON-RPC output → OpenClaw verifies programmatically.
 
 **CEO input:** `"Build me a Todo REST API"`
 
-**OpenClaw (COO) generated the full structured prompt with product thinking, quality standards, and delivery requirements** — then sent it to Claude Code via `claude --permission-mode bypassPermissions --print`.
+**OpenClaw (COO) generated the full structured prompt** — then sent it via:
+```bash
+acpx --approve-all --allowed-tools "Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS" claude exec "[COO prompt]"
+```
 
-| Metric | Control C (OpenClaw COO Flow) |
-|--------|------------------------------|
-| **Source files** | 8 (6 code + 1 test + 1 middleware) |
-| **Lines of code** | ~572 (code) + ~289 (tests) = ~861 total |
+| Metric | Control C (acpx COO Flow) |
+|--------|---------------------------|
+| **Source files** | 10 (7 code + 1 test + 2 index exports) |
+| **Lines of code** | ~700 (code) + ~371 (tests) = ~1071 total |
 | **TypeScript compilation** | ✅ Pass (zero errors) |
-| **Tests** | ✅ **25/25 passed** |
+| **Tests** | ✅ **28/28 passed** |
 | **Soft delete** | ✅ Yes (with `deletedAt` timestamp) |
-| **Error handling** | ✅ 400/404/500 + JSON parse errors |
-| **Input validation** | ✅ Title required, completed must be boolean |
-| **Auto self-verification** | ✅ Claude Code ran tests internally |
-| **Project structure** | ✅ Proper: `src/controllers/`, `src/store/`, `src/middleware/`, `src/routes/` |
-| **Duration** | ~5.4 minutes |
+| **Error handling** | ✅ 201/400/404/204 + JSON parse errors |
+| **Input validation** | ✅ Title required, non-empty, trimmed, must be string |
+| **Auto self-verification** | ✅ Ran tsc + tests, found 1 test bug, fixed it, re-ran |
+| **Project structure** | ✅ Organized: `src/types/`, `src/store/`, `src/routes/`, `src/index.ts` |
+| **Duration** | ~5.5 minutes |
 | **CEO effort** | **1 sentence** |
+| **Output format** | ✅ Structured JSON-RPC (tool calls, diffs, thinking — program-readable) |
 
 ### Three-Way Comparison
 
-| Metric | A (No COO) | B (COO in prompt) | C (Real COO Flow) |
-|--------|-----------|-------------------|-------------------|
-| Tests | 0 | 24 ✅ | 25 ✅ |
-| Lines of code | 164 | ~624 | **~861** |
-| Project structure | Flat | Flat | **Organized** (controllers/store/middleware/routes) |
-| Error classes | None | None | ✅ **Custom error classes** |
-| Health endpoint | No | No | ✅ `/health` |
-| Duration | ~2 min | ~4 min | ~5.4 min |
+| Metric | A (No COO) | B (COO in prompt) | C (Real COO Flow via acpx) |
+|--------|-----------|-------------------|---------------------------|
+| Tests | 0 | 24 ✅ | **28 ✅** |
+| Lines of code | 164 | ~624 | **~1071** |
+| Project structure | Flat | Flat | **Organized** (types/store/routes) |
+| Error classes | None | None | ✅ **Custom error handling** |
+| Health endpoint | No | No | ✅ 404 handler |
+| Auto bug fix | No | ✅ (1 bug) | ✅ **(1 bug in tests)** |
+| Duration | ~2 min | ~4 min | ~5.5 min |
 | CEO effort | 1 sentence | 1 long prompt | **1 sentence** |
+| **Output format** | ANSI text | ANSI text | ✅ **Structured JSON-RPC** |
 
 **The key difference between B and C:** In B, the human wrote a long structured prompt. In C, the **human said one sentence** and OpenClaw (COO) generated the structured prompt. Same quality, **zero effort from the CEO**.
+
+**Why acpx matters:** Control C used `acpx claude exec` which provides **structured JSON-RPC output** — tool calls, file diffs, thinking process, test results — all machine-readable. This lets OpenClaw COO programmatically verify what Claude Code did, rather than parsing human-readable text. This is the foundation for reliable automated quality control.
 
 ## Key Observations
 
