@@ -69,6 +69,8 @@ CEO（你）
 
 → [看看一人 CEO 们做出了什么](showcase/)
 
+## 🇺🇸 [English README](README.md)
+
 ## 贡献
 
 - 📖 发现错误？[提交 issue](.github/ISSUE_TEMPLATE/bug-report.md)

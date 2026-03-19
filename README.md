@@ -75,6 +75,8 @@ Real products built by real readers.
 
 → [See what one-person CEOs have built](showcase/)
 
+## 🇨🇳 [中文版 README](README_zh.md)
+
 ## Contributing
 
 - 📖 Found an error? [Open an issue](.github/ISSUE_TEMPLATE/bug-report.md)
