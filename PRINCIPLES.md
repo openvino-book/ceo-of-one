@@ -87,12 +87,18 @@ OpenClaw 当你的 COO，Claude Code 当你的开发工程师。
 - 结构化信息是产品品质的保证——COO 能精确验收每个模块
 - 工具链：`acpx --approve-all --allowed-tools "..." claude exec "任务"`
 
-### 原则 9：COO 流程 SOP 与 SOUL.md 同步进化
+### 原则 9：COO 配置包同步进化
 
-- SOUL.md 定义 COO 的**价值观**（怎么想），流程 SOP 定义 COO 的**操作标准**（怎么做）
-- 每章实践后，不仅要进化 SOUL.md，还要反思和进化 `templates/PROCESS-COO.md`
-- 流程 SOP 包括：开发流程、验收标准、质量关卡、例外处理规则
-- SOP 从真实失败中提炼——每次 bug、每次返工、每次验收不通过，都应转化为流程改进
+- SOUL.md 定义 COO 的**价值观**（怎么想），PROCESS-COO.md 定义**操作标准**（怎么做），review-checklist.md 定义**验收标准**，talk-templates 定义**CEO 话术**
+- `templates/` 目录是完整的 COO 配置包，用户全部复制到 OpenClaw workspace 即可使用：
+  - `SOUL-COO.md` → 复制为 workspace 的 `SOUL.md`
+  - `PROCESS-COO.md` → 复制为 workspace 的 `PROCESS-COO.md`（新增参考）
+  - `review-checklist.md` → 放在 workspace 根目录
+  - `talk-templates/README.md` → CEO 参考，不放入 workspace
+  - `TOOLS.md` → 复制为 workspace 的 `TOOLS.md`
+  - `HEARTBEAT.md` → 复制为 workspace 的 `HEARTBEAT.md`
+- 每章实践后，**所有配置文件** 都要反思是否需要进化
+- 每个文件的 changelog 记录变更来源（哪章、什么教训）
 - 同样遵循原则 8：用户直接复制使用，不需要理解原理
 
 ### 原则 8：SOUL.md 是产品本身，不是教程内容
