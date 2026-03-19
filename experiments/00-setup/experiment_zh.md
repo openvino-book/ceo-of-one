@@ -4,7 +4,7 @@
 > **目标：** 验证初学者能否在 5 分钟内从零安装到"AI 替我做了件事"
 > **状态：** ✅ 已完成
 
-<p align="center">
+<p align="left">
   <a href="experiment.md"><img src="https://img.shields.io/badge/🇺🇸-English-blue" alt="English" /></a>
 </p>
 

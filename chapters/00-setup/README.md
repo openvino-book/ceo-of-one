@@ -2,7 +2,7 @@
 
 >装好工具，5 分钟后你能跟 AI 对话
 
-<p align="center">
+<p align="left">
   <a href="README_zh.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
 </p>
 

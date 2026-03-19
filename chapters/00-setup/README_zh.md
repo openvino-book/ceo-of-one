@@ -2,7 +2,7 @@
 
 > Get AI to listen to you in 5 minutes
 
-<p align="center">
+<p align="left">
   <a href="README.md"><img src="https://img.shields.io/badge/🇺🇸-English-blue" alt="English" /></a>
 </p>
 
