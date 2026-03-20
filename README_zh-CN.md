@@ -9,8 +9,10 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/chapters-11-blue" alt="11 Chapters" />
+  <img src="https://img.shields.io/badge/tests-111_passed-green" alt="111 Tests Passing" />
+  <img src="https://img.shields.io/badge/deployed-live-brightgreen" alt="Deployed" />
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" />
-  <img src="https://img.shields.io/badge/status-in%20progress-yellow" alt="In Progress" />
+  <img src="https://img.shields.io/badge/status-complete-success" alt="Complete" />
 </p>
 
 ---

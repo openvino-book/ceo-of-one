@@ -9,8 +9,10 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/chapters-11-blue" alt="11 Chapters" />
+  <img src="https://img.shields.io/badge/tests-111_passed-green" alt="111 Tests Passing" />
+  <img src="https://img.shields.io/badge/deployed-live-brightgreen" alt="Deployed" />
   <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License" />
-  <img src="https://img.shields.io/badge/status-in%20progress-yellow" alt="In Progress" />
+  <img src="https://img.shields.io/badge/status-complete-success" alt="Complete" />
 </p>
 
 ---
@@ -68,6 +70,19 @@ CEO (You)
 - 🏗️ **One product, end to end.** Not fragmented tutorials — a complete product journey.
 - 💰 **Revenue-ready.** Your product can accept payments by Chapter 6.
 - 🎓 **Self-proving.** This very book was built using the method it teaches.
+
+## 🚀 Live Demo
+
+**The product this book teaches you to build — already built and deployed:**
+
+| Page | URL |
+|------|-----|
+| 🏠 Landing Page | https://ceo-of-one-seven.vercel.app/ |
+| 📊 Dashboard | https://ceo-of-one-seven.vercel.app/dashboard |
+| 🎓 Graduation | https://ceo-of-one-seven.vercel.app/graduation |
+| 🔗 GitHub | https://github.com/AIwork4me/ceo-of-one |
+
+> 111 tests passing. 4 feature modules. 1 deployed product. Zero bullshit.
 
 ## Quick Start
 
