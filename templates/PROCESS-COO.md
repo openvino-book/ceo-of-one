@@ -11,19 +11,21 @@
 Every task follows this pipeline. No shortcuts.
 
 ```
-┌─────────────────────────────────────────────────────┐
-│  1. RECEIVE    CEO says one sentence                │
-│     ↓                                               │
-│  2. DECOMPOSE  Break into sub-tasks                 │
-│     ↓                                               │
-│  3. SPECIFY    Add acceptance criteria to each task  │
-│     ↓                                               │
-│  4. EXECUTE    Send to Claude Code via acpx          │
-│     ↓                                               │
-│  5. VERIFY     Run acceptance checklist (see below)  │
-│     ↓     ↗  (if fail: go back to 4)                │
-│  6. REPORT    Summarize results to CEO              │
-└─────────────────────────────────────────────────────┘
+1. RECEIVE    CEO says one sentence
+   ↓
+2. DECOMPOSE  Break into sub-tasks
+   ↓
+3. ARCHITECT  Decide module structure & boundaries
+   ↓
+4. SPECIFY    Add acceptance criteria to each task
+   ↓
+5. EXECUTE    Send to Claude Code via acpx
+   ↓  ↗ (if fail: go back to 5)
+6. VERIFY     Run acceptance checklist
+   ↓
+7. RETAIN     Write structured B/O facts
+   ↓
+8. REPORT     Summarize results to CEO
 ```
 
 ### Step 1: RECEIVE
@@ -36,27 +38,34 @@ Every task follows this pipeline. No shortcuts.
 - Each sub-task should be independently testable
 - Order tasks by dependency (foundations first, features second)
 - Estimate complexity: small (one file) / medium (multiple files) / large (new module)
-- **Consider architecture: does this need shared types in lib/? A new feature module? Modifications to existing modules?**
 
-### Step 3: SPECIFY
+### Step 3: ARCHITECT
+- Decide module structure BEFORE writing any code
+- Where does this fit in existing architecture? New feature module in `src/features/`?
+- Does it need shared types in `src/lib/`?
+- What are the module boundaries? (Principle 10: Modular Architecture)
+- Rule: features → lib dependency only, never reverse
+
+### Step 4: SPECIFY
 For each sub-task, define:
 - **Input**: What Claude Code receives
 - **Output**: What must exist after completion (files, endpoints, tests)
 - **Acceptance criteria**: The pass/fail conditions
 - **Edge cases**: What could go wrong
+- Minimum criteria: compile check, test count, input validation, error format, code structure
 
-### Step 4: EXECUTE
+### Step 5: EXECUTE
 - Use `acpx --approve-all --allowed-tools "Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS" claude exec "task"`
 - Include SOUL-COO.md instructions in the prompt
 - Monitor structured JSON-RPC output for progress
 - If Claude Code asks a question, answer it based on your understanding of CEO intent
 
-### Step 5: VERIFY
+### Step 6: VERIFY
 Run this checklist BEFORE reporting "done":
 
 ```
 [ ] TypeScript/JavaScript compiles with zero errors (npx tsc --noEmit / npm run build)
-[ ] All tests pass (npm test)
+[ ] All tests pass (npm test) — FULL suite, not just new tests
 [ ] No TODO/FIXME/HACK comments in code
 [ ] No console.log left in production code
 [ ] All API endpoints return proper HTTP status codes
@@ -65,17 +74,28 @@ Run this checklist BEFORE reporting "done":
 [ ] New files follow the project's directory structure conventions
 [ ] package.json scripts are correct and runnable
 [ ] The app actually runs (npm start works)
+[ ] Architecture: new code in features/<module>/, does NOT modify existing modules
+[ ] Architecture: no cross-feature imports, lib/ has zero imports from features/
 ```
 
-**If any item fails → go back to Step 4. Do not report partial success.**
+**If any item fails → go back to Step 5. Do not report partial success.**
 
-### Step 6: REPORT
+### Step 7: RETAIN
+After task completion, write structured Retain entries:
+- `B @entity`: Objective fact backed by experiment data
+- `O(c=0.0-1.0) @entity`: Subjective opinion with confidence score
+- Save to the chapter's experiment log
+- If any opinion reaches confidence > 0.9, update SOUL-COO.md or PROCESS-COO.md rules
+
+**Before each new task**, use memory_search to recall relevant Retain entries from past chapters.
+
+### Step 8: REPORT
 Tell the CEO:
-1. ✅ What was built (in plain language, not technical jargon)
-2. 📊 Quality metrics (X tests passing, Y files created)
-3. ⚠️ Any notable decisions or trade-offs
-4. 🐛 Any bugs found and fixed during verification
-5. ❓ Any risks or open questions
+1. What was built (in plain language, not technical jargon)
+2. Quality metrics (X tests passing, Y files created)
+3. Any notable decisions or trade-offs
+4. Any bugs found and fixed during verification
+5. Any risks or open questions
 
 ---
 
@@ -85,10 +105,11 @@ These are non-negotiable. A task is NOT complete until ALL gates pass.
 
 | Gate | Command | Pass Condition |
 |------|---------|---------------|
-| Compile check | `npx tsc --noEmit` | Zero errors |
-| Tests | `npm test` | 100% pass rate |
+| Compile check | `npm run build` | Zero errors |
+| Tests | `npm test` | 100% pass rate (full suite) |
 | Run check | `npm start` (brief) | No crash on startup |
-| No leftover | `grep -r "TODO\|FIXME\|HACK" src/` | Zero matches |
+| No leftover | search TODO/FIXME/HACK | Zero matches |
+| Architecture | grep cross-feature imports | Zero matches |
 
 ---
 
@@ -110,21 +131,27 @@ These are non-negotiable. A task is NOT complete until ALL gates pass.
 
 ## Changelog
 
+### v0.6 — After Research: Retain/Recall/Reflect
+- Added Step 7 (RETAIN): structured B(belief)/O(opinion with confidence) entries
+- Added recall instruction: before each task, search past Retain entries
+- Added Step 3 (ARCHITECT): module structure before code
+- 8-step flow complete: Receive→Decompose→Architect→Specify→Execute→Verify→Retain→Report
+
 ### v0.5 — After Platform Refactor
-- Added Step 2.5 (ARCHITECT): decide module structure, shared types, and boundaries BEFORE coding
-- Changed Step 5 (VERIFY): must run FULL test suite, not just new tests, to catch regressions
-- Added to Quality Gates: "No cross-feature imports" verification
-- Key lesson: architecture decided before features are needed, not after. Modular structure prevents bugs.
-- Added to Step 2 (DECOMPOSE): include tech stack selection and design system definition
-- Added to Step 3 (SPECIFY): include content/copy specifications (Chinese text IS part of the spec)
-- Key lesson: specifying exact colors (#0a0a0a, #1a1a2e, #6366f1) and content before coding = zero rework
+- Added architecture considerations to DECOMPOSE step
+- VERIFY now requires FULL test suite (regression prevention)
+- Key lesson: architecture before features, modular structure prevents bugs
+
+### v0.4 — After Chapter 4 (Landing Page Build)
+- DECOMPOSE includes tech stack + design system
+- SPECIFY includes content/copy specifications
+- Key lesson: exact specs before coding = zero rework
 
 ### v0.3 — After Chapter 3 (Acceptance Criteria Test)
-- Added Step 3 enforcement: SPECIFY must include at minimum: compile check, test count, input validation, edge cases, error format, code structure
-- Added "Acceptance Criteria Template" — the 13 criteria from Ch3 as a reusable checklist
-- Key lesson from Ch3: "Make sure it works" → 2 bugs, missing features. Specific criteria → 0 bugs, complete.
+- SPECIFY must include minimum acceptance criteria
+- Key lesson: "make sure it works" = 2 bugs. Specific criteria = 0 bugs.
 
 ### v0.1 — After Chapter 1 (COO Soul Experiment)
-- Initial 6-step flow based on observing Claude Code's behavior with/without COO guidance
-- 4 quality gates from Control C (acpx) experiment: compile, test, run, clean code
-- Key lesson: AI without process ships fast but broken; AI with process ships slightly slower but production-ready
+- Initial 6-step flow based on observing Claude Code behavior
+- 4 quality gates: compile, test, run, clean code
+- Key lesson: AI without process ships fast but broken; AI with process ships production-ready

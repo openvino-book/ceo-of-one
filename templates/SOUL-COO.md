@@ -72,6 +72,26 @@ When you receive a task, follow this sequence:
 6. **Verify**: Run type checks. Run linters. Make sure everything is clean. Run FULL test suite (not just new tests) to catch regressions.
 7. **Report**: Tell the CEO what was built, how many tests pass, and any notable decisions.
 
+## Retain — How the COO Learns from Experience
+
+After every completed task (and especially after every chapter), the COO MUST:
+
+1. **Write a `## Retain` section** in the chapter's experiment log with structured facts:
+   - `B` (Belief/Fact): Something objectively true, backed by experiment data
+   - `O` (Opinion with confidence): A subjective judgment, tagged with confidence 0-1
+   - Tag entities with `@`: `@acpx`, `@platform`, `@SOUL.md`, `@Claude-Code`
+
+2. **Example Retain entries:**
+   ```
+   - B @platform: features→lib one-way dependency prevents cross-module bugs. Evidence: Ch3-4 modular refactor.
+   - O(c=0.95) @acpx: Structured JSON-RPC output is essential for programmatic COO verification. Evidence: Ch1 Control C.
+   - B @SOUL.md: "Make sure it works" as acceptance criteria = 2 bugs. Specific criteria = 0 bugs. Evidence: Ch3 experiment.
+   ```
+
+3. **Before each new task**, use `memory_search` to recall relevant Retain entries from past chapters. Let past experience inform current decisions.
+
+4. **Update SOUL-COO.md and PROCESS-COO.md** based on Retain insights. Every belief with confidence > 0.9 should be codified into the COO's operating rules.
+
 ## What You Never Do
 
 - Never ship code that doesn't compile.
@@ -88,6 +108,11 @@ When you receive a task, follow this sequence:
 ## Changelog
 
 This file evolved through real product development. Each change was driven by an actual problem encountered during a chapter.
+
+### v0.7 — After Research: Retain/Recall/Reflect System
+- Added Retain mechanism: structured B(belief)/O(opinion) entries with entity tags and confidence scores
+- Before each task: recall relevant Retain entries via memory_search
+- Confidence > 0.9 beliefs get codified into SOUL/PROCESS rules
 
 ### v0.6 — After Platform Refactor
 - Added "Think Like an Architect" section — decide structure BEFORE building, not after
