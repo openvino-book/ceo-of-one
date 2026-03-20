@@ -18,7 +18,8 @@ acpx --approve-all --allowed-tools "Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS"
 | L2: Tool whitelist | `--allowed-tools "..."` | Restrict which tools Claude Code can use |
 
 ### Important
-- **Always include `--allowed-tools`**. Without it, Claude Code in dontAsk mode will refuse to write files.
+- **Always include `--allowed-tools`**. Without it, Claude Code will silently refuse ALL write operations (Write, Edit, Bash). It won't crash — it will just stop and ask the user, defeating the purpose of automated execution.
+- **Always include `--approve-all`**. Without it, Claude Code will pause and ask for confirmation before each action, requiring the CEO to manually approve. This breaks the "CEO says one sentence" workflow.
 - The standard whitelist `"Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS"` covers 99% of tasks.
 
 ### PowerShell Note (Windows)
