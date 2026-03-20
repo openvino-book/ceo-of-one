@@ -38,6 +38,7 @@ export interface AuthUser {
   email: string
   name: string
   createdAt: Date
+  enrolledCourses?: string[]
 }
 
 export interface RegisterInput {
