@@ -69,7 +69,12 @@ CEO (You)
 - 🧪 **Every claim is battle-tested.** We built the examples first, then wrote the book.
 - 🏗️ **One product, end to end.** Not fragmented tutorials — a complete product journey.
 - 💰 **Revenue-ready.** Your product can accept payments by Chapter 6.
+
+> ⚠️ **Important:** The payment system in this course uses **simulated payments** (no real money). Connecting real payment providers (Stripe, WeChat Pay, etc.) is a post-graduation task. The architecture is payment-provider-ready — you just plug in a real one when you're ready.
+
 - 🎓 **Self-proving.** This very book was built using the method it teaches.
+
+> ⚠️ **Important:** The platform uses **in-memory seed data** (not a database). Users, courses, and orders reset when the server restarts. Adding a database (PostgreSQL, MongoDB, etc.) is a post-graduation task. The architecture is database-ready — you just swap `store.ts` with a real database module when you're ready.
 
 ## 🚀 Live Demo
 
@@ -87,9 +92,33 @@ CEO (You)
 
 > 111 tests passing. 4 feature modules. 1 deployed product. Zero bullshit.
 
+## Prerequisites
+
+Before you start, you need:
+
+| Tool | What it is | How to get it |
+|------|-----------|---------------|
+| **Node.js** (v18+) | JavaScript runtime | [nodejs.org](https://nodejs.org) — download LTS, install, restart terminal |
+| **OpenClaw** | Your AI COO | `npm install -g openclaw` — see [openclaw.ai](https://docs.openclaw.ai) |
+| **acpx** | Claude Code connector | `npm install -g acpx` — comes with OpenClaw |
+| **Claude API key** | Powers your engineer | [console.anthropic.com](https://console.anthropic.com) — get API key, set `ANTHROPIC_API_KEY` environment variable |
+| **OpenClaw AI key** | Powers your COO | Configure in OpenClaw after install |
+
+> **Don't know how to set environment variables?**
+> - **Windows:** Search "Environment Variables" in Start → Edit → New → `ANTHROPIC_API_KEY` = your key → Restart terminal
+> - **macOS/Linux:** `echo 'export ANTHROPIC_API_KEY=your-key' >> ~/.bashrc && source ~/.bashrc`
+
+> ⚠️ **Both API keys cost money.** Claude API usage is pay-as-you-go (~$5-15 for the full course). OpenClaw has its own pricing. This is the cost of running a one-person company — still cheaper than hiring a single developer.
+
 ## Quick Start
 
-👉 Start with [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/)
+1. Install all prerequisites above
+2. Start OpenClaw: `openclaw gateway start`
+3. Copy `templates/SOUL-COO.md` to your OpenClaw workspace as `SOUL.md`
+4. Copy `templates/PROCESS-COO.md` to the same workspace
+5. 👉 Start with [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/)
+
+> **What is the OpenClaw workspace?** It's the folder where OpenClaw stores your AI's memory and configuration. Run `openclaw status` to find its path. On first launch, OpenClaw creates it automatically — usually at `~/.openclaw/workspace/` (macOS/Linux) or `C:\Users\<YourName>\.openclaw\workspace\` (Windows).
 
 ## Showcase
 

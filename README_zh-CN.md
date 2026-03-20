@@ -69,9 +69,40 @@ CEO（你）
 - 🧪 **每句话术都经过实战验证**，先做出来，再写进书里
 - 🏗️ **一个产品从头到尾**，不是碎片教程，是完整的产品之旅
 - 💰 **第 6 章就能收钱**，你的产品具备付费能力
+
+> ⚠️ **重要提示：** 本课程中的支付系统使用的是**模拟支付**（不涉及真实金额）。接入真实支付（Stripe、微信支付等）是毕业后的事。架构已经为真实支付做好准备——到时候替换一个模块就行。
+
 - 🎓 **自证效应**：这本书本身就是用它教的方法做出来的
 
+> ⚠️ **重要提示：** 平台使用的是**内存种子数据**（不是数据库）。用户、课程、订单在服务器重启后会重置。添加数据库（PostgreSQL、MongoDB 等）是毕业后的事。架构已经为数据库做好准备——到时候把 `store.ts` 替换成真实数据库模块就行。
+
+## 前置条件
+
+开始之前，你需要：
+
+| 工具 | 是什么 | 怎么装 |
+|------|--------|--------|
+| **Node.js**（v18+） | JavaScript 运行环境 | [nodejs.org](https://nodejs.org) — 下载 LTS 版，安装，重启终端 |
+| **OpenClaw** | 你的 AI COO | `npm install -g openclaw` — 参考 [openclaw.ai](https://docs.openclaw.ai) |
+| **acpx** | Claude Code 连接器 | `npm install -g acpx` — 随 OpenClaw 一起安装 |
+| **Claude API key** | 驱动你的工程师 | [console.anthropic.com](https://console.anthropic.com) — 获取 API key，设置环境变量 `ANTHROPIC_API_KEY` |
+| **OpenClaw AI key** | 驱动你的 COO | 安装 OpenClaw 后按提示配置 |
+
+> **不知道怎么设置环境变量？**
+> - **Windows：** 开始菜单搜索"环境变量" → 编辑 → 新建 → 变量名 `ANTHROPIC_API_KEY`，值填你的 key → 重启终端
+> - **macOS/Linux：** `echo 'export ANTHROPIC_API_KEY=你的key' >> ~/.bashrc && source ~/.bashrc`
+
+> ⚠️ **两个 API 都需要付费。** Claude API 按量计费（完成全部课程约 $5-15）。OpenClaw 有自己的定价。这是经营一人公司的成本——仍然比雇一个开发便宜得多。
+
 ## 快速开始
+
+1. 安装上面所有前置条件
+2. 启动 OpenClaw：`openclaw gateway start`
+3. 将 `templates/SOUL-COO.md` 复制到你的 OpenClaw 工作目录，重命名为 `SOUL.md`
+4. 将 `templates/PROCESS-COO.md` 复制到同一个目录
+5. 👉 从[第 0 章：5 分钟让 AI 听你的话](chapters/00-setup/)开始
+
+> **OpenClaw 工作目录在哪？** 运行 `openclaw status` 可以查看路径。首次启动时 OpenClaw 会自动创建，通常在 `~/.openclaw/workspace/`（macOS/Linux）或 `C:\Users\<你的用户名>\.openclaw\workspace\`（Windows）。
 
 👉 从 [第 0 章：5 分钟让 AI 听你说话](chapters/00-setup/) 开始
 
