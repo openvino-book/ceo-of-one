@@ -3,6 +3,29 @@ import { Course, CreateCourseInput, UpdateCourseInput, CourseFilters } from './t
 
 class CourseStore {
   private courses: Map<string, Course> = new Map()
+  private seeded: boolean = false
+
+  constructor() {
+    this.seed()
+  }
+
+  private seed(): void {
+    if (this.seeded) return
+    this.seeded = true
+
+    const demoCourses: Array<Omit<CreateCourseInput, 'instructor'> & { instructor: string }> = [
+      { title: 'AI Prompt Engineering Masterclass', description: 'Master the art of prompt engineering to get the best results from AI tools.', instructor: 'Dr. Sarah Chen', price: 199, category: 'programming', published: true },
+      { title: 'One-Person Company Setup Guide', description: 'Everything you need to know about setting up and running a one-person business.', instructor: 'Mike Johnson', price: 99, category: 'business', published: true },
+      { title: 'Design with AI Tools', description: 'Learn to create stunning designs using AI-powered design tools.', instructor: 'Emma Wilson', price: 149, category: 'design', published: true },
+      { title: 'Content Marketing Automation', description: 'Automate your content marketing workflow with AI and modern tools.', instructor: 'Alex Turner', price: 129, category: 'marketing', published: true },
+      { title: 'Build Your First SaaS', description: 'A complete guide to building and launching your first Software as a Service product.', instructor: 'David Park', price: 299, category: 'programming', published: true },
+      { title: 'Personal Branding Strategy', description: 'Build a powerful personal brand that attracts opportunities.', instructor: 'Lisa Brown', price: 79, category: 'business', published: true },
+    ]
+
+    for (const courseData of demoCourses) {
+      this.create(courseData)
+    }
+  }
 
   create(input: CreateCourseInput): Course {
     const now = new Date()
@@ -68,6 +91,7 @@ class CourseStore {
 
   clear(): void {
     this.courses.clear()
+    this.seeded = false
   }
 }
 

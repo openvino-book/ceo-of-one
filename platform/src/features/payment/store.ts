@@ -4,6 +4,64 @@ import { PaymentOrder, PaymentStatus } from './types'
 class PaymentStore {
   private orders: Map<string, PaymentOrder> = new Map()
   private enrollments: Map<string, Set<string>> = new Map()
+  private seeded: boolean = false
+
+  constructor() {
+    this.seed()
+  }
+
+  private seed(): void {
+    if (this.seeded) return
+    this.seeded = true
+
+    // Dynamic require to avoid circular dependency at module load time
+    const { authStore } = require('../auth/store')
+    const { courseStore } = require('../courses/store')
+
+    const users = authStore.findAll()
+    const courses = courseStore.findAll()
+
+    if (users.length === 0 || courses.length === 0) return
+
+    const demoOrders: Array<{ userIndex: number; courseIndex: number; amount: number; status: PaymentStatus; daysAgo: number }> = [
+      { userIndex: 0, courseIndex: 0, amount: 199, status: 'completed', daysAgo: 7 },
+      { userIndex: 1, courseIndex: 1, amount: 99, status: 'completed', daysAgo: 6 },
+      { userIndex: 2, courseIndex: 2, amount: 149, status: 'completed', daysAgo: 5 },
+      { userIndex: 3, courseIndex: 3, amount: 129, status: 'pending', daysAgo: 4 },
+      { userIndex: 0, courseIndex: 4, amount: 299, status: 'completed', daysAgo: 3 },
+      { userIndex: 1, courseIndex: 5, amount: 79, status: 'completed', daysAgo: 2 },
+      { userIndex: 4, courseIndex: 0, amount: 199, status: 'pending', daysAgo: 1 },
+      { userIndex: 2, courseIndex: 4, amount: 299, status: 'completed', daysAgo: 0 },
+    ]
+
+    for (const orderData of demoOrders) {
+      const user = users[orderData.userIndex]
+      const course = courses[orderData.courseIndex]
+      if (!user || !course) continue
+
+      const now = new Date()
+      const createdAt = new Date(now.getTime() - orderData.daysAgo * 24 * 60 * 60 * 1000)
+
+      const order: PaymentOrder = {
+        id: uuidv4(),
+        userId: user.id,
+        courseId: course.id,
+        amount: orderData.amount,
+        status: orderData.status,
+        createdAt,
+        updatedAt: createdAt,
+      }
+      this.orders.set(order.id, order)
+
+      if (orderData.status === 'completed') {
+        this.enroll(user.id, course.id)
+      }
+    }
+  }
+
+  findAll(): PaymentOrder[] {
+    return Array.from(this.orders.values()).sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime())
+  }
 
   createOrder(
     userId: string,
@@ -69,6 +127,7 @@ class PaymentStore {
   clear(): void {
     this.orders.clear()
     this.enrollments.clear()
+    this.seeded = false
   }
 }
 
