@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useTranslations } from 'next-intl'
 import Navigation from '@/components/Navigation'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/i18n/navigation'
 
 function TabButton({
   active,

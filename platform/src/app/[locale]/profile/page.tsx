@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Navigation from '@/components/Navigation'
-import Link from 'next/link'
+import { Link } from '@/i18n/navigation'
 
 interface User {
   id: string

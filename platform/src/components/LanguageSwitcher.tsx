@@ -1,8 +1,7 @@
 'use client'
 
-import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/i18n/navigation'
 
 const locales = ['en', 'zh'] as const
 type Locale = (typeof locales)[number]
