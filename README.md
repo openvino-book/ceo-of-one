@@ -1,5 +1,5 @@
 <p align="left">
-  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/🇨🇳-中文版-blue" alt="中文版" /></a>
+  <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/-中文版-blue" alt="中文版" /></a>
 </p>
 
 <p align="center">
@@ -125,14 +125,6 @@ Before you start, you need:
 Real products built by real readers.
 
 → [See what one-person CEOs have built](showcase/)
-
-## 🇨🇳 [中文版 README](README_zh-CN.md)
-
-## Contributing
-
-- 📖 Found an error? [Open an issue](.github/ISSUE_TEMPLATE/bug-report.md)
-- 💡 Have an idea? [Suggest it](.github/ISSUE_TEMPLATE/feature-request.md)
-- 🎓 Built something? [Show it off](showcase/)
 
 ## License
 
