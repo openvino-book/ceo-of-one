@@ -11,6 +11,8 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "jsonwebtoken": "^9.0.3",
     "next": "14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -18,7 +20,9 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/jest": "^29.5.12",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.2",
     "@types/react-dom": "^18.3.0",

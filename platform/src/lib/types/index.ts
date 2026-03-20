@@ -32,3 +32,28 @@ export interface PaginatedResponse<T> {
   limit: number
   totalPages: number
 }
+
+export interface AuthUser {
+  id: string
+  email: string
+  name: string
+  createdAt: Date
+}
+
+export interface RegisterInput {
+  name: string
+  email: string
+  password: string
+}
+
+export interface LoginInput {
+  email: string
+  password: string
+}
+
+export interface JwtPayload {
+  userId: string
+  email: string
+  iat: number
+  exp: number
+}
