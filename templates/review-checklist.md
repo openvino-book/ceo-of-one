@@ -36,7 +36,11 @@
 - [ ] Error responses return structured JSON, not stack traces
 - [ ] Input validation on all user-facing inputs
 
-### Security
+### Data Model Validation
+- [ ] All enum fields have TypeScript union types with runtime validation
+- [ ] All required fields are validated (non-empty strings, positive numbers, etc.)
+- [ ] Default values set correctly (e.g., published: false)
+- [ ] Auto-generated fields handled by system (id, createdAt, updatedAt)
 - [ ] No sensitive data in logs or error messages
 - [ ] Input sanitized before use (prevent injection)
 - [ ] No `eval()`, `innerHTML`, or equivalent dangerous patterns
@@ -54,7 +58,7 @@ Items marked with 🆕 were added from a specific chapter's real mistakes.
 | Input validation on all inputs | Ch1 | Control B caught missing validation during test phase |
 | Error responses = JSON, not traces | Ch1 | Control A leaked stack traces in error responses |
 | No hardcoded secrets | Ch2 | Noted as risk for future payment chapters (Ch6) |
-| File names consistent | Ch2 | Control A/B chose `snake.html`, Control C used `index.html` — inconsistency |
+| Data model validation (enum + required fields) | Ch3 | B had Category union type, A just used string — validation gap |
 
 ---
 

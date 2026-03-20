@@ -109,10 +109,10 @@ These are non-negotiable. A task is NOT complete until ALL gates pass.
 
 ## Changelog
 
-### v0.2 — After Chapter 2 (Precision Test)
-- Added Step 3 (SPECIFY) — Ch2 proved that specifications dramatically impact quality
-- Added "No leftover" gate — Ch2 precise control showed AI adds unnecessary extras without specs
-- Added "When to Escalate" — Ch2 control B added unrequested features (snake eyes)
+### v0.3 — After Chapter 3 (Acceptance Criteria Test)
+- Added Step 3 enforcement: SPECIFY must include at minimum: compile check, test count, input validation, edge cases, error format, code structure
+- Added "Acceptance Criteria Template" — the 13 criteria from Ch3 as a reusable checklist
+- Key lesson from Ch3: "Make sure it works" → 2 bugs, missing features. Specific criteria → 0 bugs, complete.
 
 ### v0.1 — After Chapter 1 (COO Soul Experiment)
 - Initial 6-step flow based on observing Claude Code's behavior with/without COO guidance
