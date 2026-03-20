@@ -73,3 +73,7 @@ This is the moment where the project stops being a tutorial and starts being a p
 ---
 
 📖 **Experiment Record:** [experiment.md](experiment.md) | [实验记录](experiment_zh-CN.md)
+
+---
+
+**Previous:** [← Chapter 8: Ship It](../08-deploy/README.md) | **Next:** [Chapter 10: Graduation →](../10-graduation/README.md)

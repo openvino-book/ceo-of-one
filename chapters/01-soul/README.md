@@ -161,6 +161,6 @@ YOUR SPECIFIC TASK HERE
 
 ---
 
-## ➡️ Next: [🎯 Chapter 2 — Build a Snake game with one sentence](../02-snake-game/)
+## ⬅️ Previous: [📋 Chapter 0 — Get AI to Listen to You](../00-setup/) | ➡️ Next: [🎯 Chapter 2 — Build a Snake game with one sentence](../02-snake-game/)
 
 Now your AI thinks like a COO. In Chapter 2, you'll test your new power by building a playable Snake game — with just one sentence.

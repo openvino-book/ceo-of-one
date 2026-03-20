@@ -33,11 +33,11 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
 | 🚀 [0](chapters/00-setup/) | Get AI to listen to you in 5 minutes |
 | 🧠 [1](chapters/01-soul/) | Give AI a top-tier COO brain |
 | 🎯 [2](chapters/02-snake-game/) | Build a playable Snake game — with one sentence |
-| 📝 [3](chapters/03-quality-check/) | Make AI check its own work (so you don't have to) |
+| 📝 [3](chapters/03-quality-checklist/) | Make AI check its own work (so you don't have to) |
 | 🏠 [4](chapters/04-landing-page/) | Your academy's homepage — live, beautiful |
 | 🔐 [5](chapters/05-auth/) | Students can sign up and browse courses |
 | 💳 [6](chapters/06-payment/) | Students pay → content unlocks instantly |
-| 🐛 [7](chapters/07-fix-bugs/) | Learn to say "this is wrong, fix it" — precisely |
+| 🐛 [7](chapters/07-bugfix/) | Learn to say "this is wrong, fix it" — precisely |
 | 🌍 [8](chapters/08-deploy/) | Buy a domain, deploy, the world can see it |
 | 📊 [9](chapters/09-dashboard/) | See who signed up, who paid, how much you made |
 | 🎓 [10](chapters/10-graduation/) | Build a second product from scratch — no tutorial |

@@ -100,3 +100,7 @@ The technical work was minimal — four config files, zero bugs, existing tests 
 And the empty data? That's a gift. It gives you urgency. Chapter 9 isn't an abstract "best practice" — it's the thing standing between your live site and an actual product people can use.
 
 **One-person company principle:** Deployment is the moment your project becomes real. Prepare your code carefully, but remember — the person who clicks "Deploy" matters more than the code they're deploying.
+
+---
+
+**Previous:** [← Chapter 7: Fix What's Broken](../07-bugfix/README.md) | **Next:** [Chapter 9: Dashboard →](../09-dashboard/README.md)

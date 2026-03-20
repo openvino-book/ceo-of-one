@@ -86,3 +86,7 @@ Zero bugs isn't a goal to strive for — it's a sign that your process is workin
 ---
 
 📖 [Full experiment record →](experiment.md)
+
+---
+
+**Previous:** [← Chapter 6: Make Money](../06-payment/README.md) | **Next:** [Chapter 8: Ship It →](../08-deploy/README.md)

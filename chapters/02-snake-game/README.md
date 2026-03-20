@@ -119,6 +119,6 @@ Don't micromanage every pixel. Specify the **outcome**, not the implementation:
 
 ---
 
-## ➡️ Next: [📝 Chapter 3 — Make AI check its own work](../03-quality-check/)
+## ⬅️ Previous: [🧠 Chapter 1 — Give AI a top-tier COO brain](../01-soul/) | ➡️ Next: [📝 Chapter 3 — Make AI check its own work](../03-quality-checklist/)
 
 You can now tell AI exactly what to build. In Chapter 3, you'll learn how to make AI verify its own work — so you don't have to sit there watching it.

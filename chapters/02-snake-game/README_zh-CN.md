@@ -119,6 +119,6 @@ Requirements:
 
 ---
 
-## ➡️ 下一章：[📝 第 3 章 —— 让 AI 自己检查工作质量](../03-quality-check/README_zh-CN.md)
+## ⬅️ 上一篇：[🧠 第 1 章 —— 给 AI 装一个顶级 COO 的大脑](../01-soul/README_zh-CN.md) | ➡️ 下一章：[📝 第 3 章 —— 让 AI 自己检查工作质量](../03-quality-checklist/README_zh-CN.md)
 
 现在你能精确告诉 AI 做什么了。第 3 章，你要学会让 AI 自己验收工作——这样你就不用盯着它了。
