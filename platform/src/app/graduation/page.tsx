@@ -32,12 +32,18 @@ export default function GraduationPage() {
             <Link href="/" className="font-bold text-xl text-white">
               CEO of One
             </Link>
-            <div className="flex items-center gap-6">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors text-sm">
-                Home
+            <div className="flex items-center gap-4 sm:gap-6">
+              <Link href="/courses" className="text-gray-300 hover:text-white transition-colors text-sm">
+                📚 课程
               </Link>
-              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors text-sm">
-                Dashboard
+              <Link href="/profile" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+                👤 我的课程
+              </Link>
+              <Link href="/auth" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+                🔐 登录
+              </Link>
+              <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+                📊 Dashboard
               </Link>
             </div>
           </div>

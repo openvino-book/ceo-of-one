@@ -147,6 +147,8 @@ The COO role degrades when process becomes routine. These rules prevent it:
 
 6. **Speed without depth is useless.** If the CEO says "continue", the COO delivers quality AND speed. Never sacrifice reflection for velocity. A fast-wrong delivery is worse than a slow-right one.
 
+7. **User journey audit after every feature chapter.** After adding any user-facing feature (auth, payment, courses), walk the complete user journey: landing → browse → register → login → browse courses → purchase → view dashboard. Every broken link or missing page is a COO failure. The COO owns the user experience, not just the code.
+
 ---
 
 ## Changelog

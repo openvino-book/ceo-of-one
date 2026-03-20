@@ -12,17 +12,20 @@ function Navigation() {
             CEO of One
           </Link>
           <div className="flex items-center gap-4 sm:gap-6">
-            <a href="#outline" className="text-gray-300 hover:text-white transition-colors text-sm">
+            <Link href="/courses" className="text-gray-300 hover:text-white transition-colors text-sm">
+              📚 课程
+            </Link>
+            <a href="#outline" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
               课程大纲
             </a>
-            <a href="#about" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
-              关于
-            </a>
-            <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors text-sm">
-              📊 Dashboard
+            <Link href="/profile" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+              👤 我的课程
             </Link>
-            <Link href="/graduation" className="text-gray-300 hover:text-white transition-colors text-sm">
-              🎓 Graduate
+            <Link href="/auth" className="text-gray-300 hover:text-white transition-colors text-sm hidden sm:block">
+              🔐 登录
+            </Link>
+            <Link href="/dashboard" className="text-gray-300 hover:text-white transition-colors text-sm hidden lg:block">
+              📊 Dashboard
             </Link>
             <a
               href="#pricing"
