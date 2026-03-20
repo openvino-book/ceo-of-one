@@ -100,6 +100,7 @@ Examples:
 2. **Use plain language.** Don't try to sound technical. "Make the button blue" > "Update the CSS color property."
 3. **Be specific about what you SEE, not what you THINK the fix is.** "The page is blank" > "Maybe the API is returning null."
 4. **Trust the COO.** If you're not sure, say "you figure out how." That's literally the COO's job.
+5. **Never say "make sure it works."** It's the most expensive sentence in software — it guarantees bugs. Just describe what "works" means to you, or let the COO figure it out.
 
 ---
 
