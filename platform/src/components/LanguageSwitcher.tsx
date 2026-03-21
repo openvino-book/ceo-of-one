@@ -1,31 +1,24 @@
 'use client'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from '@/i18n/navigation'
-
-const locales = ['en', 'zh'] as const
-type Locale = (typeof locales)[number]
+import { useRouter, usePathname } from '@/i18n/navigation'
 
 export default function LanguageSwitcher() {
   const t = useTranslations('languageSwitcher')
-  const locale = useLocale() as Locale
-  const pathname = usePathname()
+  const locale = useLocale()
   const router = useRouter()
+  const pathname = usePathname()
 
-  const switchLocale = (newLocale: Locale) => {
-    // Replace the current locale in the pathname
-    const segments = pathname.split('/')
-    segments[1] = newLocale
-    const newPath = segments.join('/')
-    router.push(newPath)
+  const otherLocale = locale === 'en' ? 'zh' : 'en'
+
+  const switchLocale = () => {
+    router.replace(pathname, { locale: otherLocale })
   }
-
-  const otherLocale = locales.find((l) => l !== locale) as Locale
 
   return (
     <button
-      onClick={() => switchLocale(otherLocale)}
-      className="px-3 py-1.5 rounded-lg bg-dark-card border border-white/10 text-gray-300 hover:text-white hover:border-accent/50 transition-colors text-sm font-medium"
+      onClick={switchLocale}
+      className="px-3 py-1.5 rounded-lg bg-dark-card border border-white/10 text-gray-300 hover:text-white hover:border-accent/50 transition-colors text-sm font-medium cursor-pointer"
       aria-label={`Switch to ${otherLocale === 'en' ? 'English' : '中文'}`}
     >
       {t(otherLocale)}
