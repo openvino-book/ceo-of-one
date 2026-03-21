@@ -208,9 +208,23 @@ export default function CoursesPage() {
           </div>
 
           {loading ? (
-            <div className="text-center py-12">
-              <div className="inline-block animate-spin rounded-full h-8 w-8 border-4 border-accent border-t-transparent" />
-              <p className="text-gray-400 mt-4">{t('loading')}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" aria-label={t('loading')}>
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="bg-dark-card rounded-2xl p-6 border border-white/5 animate-shimmer">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="h-6 w-20 rounded-full bg-white/10" />
+                    <div className="h-5 w-14 rounded bg-white/10" />
+                  </div>
+                  <div className="h-5 w-3/4 rounded bg-white/10 mb-2" />
+                  <div className="h-4 w-full rounded bg-white/10 mb-1" />
+                  <div className="h-4 w-5/6 rounded bg-white/10 mb-4" />
+                  <div className="flex items-center justify-between">
+                    <div className="h-4 w-24 rounded bg-white/10" />
+                    <div className="h-6 w-16 rounded bg-white/10" />
+                  </div>
+                  <div className="mt-4 h-12 rounded-xl bg-white/10" />
+                </div>
+              ))}
             </div>
           ) : error ? (
             <div className="text-center py-12">
