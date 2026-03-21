@@ -61,6 +61,8 @@ Requirements:
 "
 ```
 
+> **Using OpenClaw?** You don't need this command at all. Just tell your COO: "Build me a snake game with dark background, green snake, 400x400 canvas, arrow keys, restart button." Your COO adds the soul and precision automatically. The template above is for when you use acpx directly.
+
 ---
 
 ## 🔍 The Three Levels of Precision
