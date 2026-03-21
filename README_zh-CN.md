@@ -88,24 +88,16 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
    git clone https://github.com/AIwork4me/ceo-of-one.git
    cd ceo-of-one
    ```
-2. **安装 [Node.js](https://nodejs.org) v18+**（如果还没有）
-3. **安装 [OpenClaw](https://github.com/openclaw/openclaw)** — 你的 AI COO：
-   ```bash
-   npm install -g openclaw
-   openclaw gateway start
-   ```
-4. **获取 [Claude API key](https://console.anthropic.com)** — 驱动你的工程师。设置环境变量：
-   ```bash
-   export ANTHROPIC_API_KEY=your-key-here
-   ```
-5. **复制 COO 配置**到你的 OpenClaw 工作目录：
-   ```bash
-   cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
-   cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
-   ```
-6. 👉 从[第 0 章：5 分钟让 AI 听你的话](chapters/00-setup/)开始
+2. 👉 跟着[第 0 章：5 分钟让 AI 听你的话](chapters/00-setup/)走——每一步安装都有详细说明。
 
-> **OpenClaw 工作目录在哪？** 运行 `openclaw status` 可以查看路径。首次启动时 OpenClaw 会自动创建，通常在 `~/.openclaw/workspace/`（macOS/Linux）或 `C:\Users\<你的用户名>\.openclaw\workspace\`（Windows）。
+> **赶时间？** 极简版：
+> ```bash
+> npm install -g openclaw acpx @anthropic-ai/claude-code   # 安装工具
+> export ANTHROPIC_API_KEY=你的key                            # 设置 API key
+> openclaw gateway start                                     # 启动你的 COO
+> cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md     # 加载 COO 大脑
+> ```
+> 但真的——先读第 0 章。它解释了**为什么**每一步都重要，以及出了问题怎么办。
 
 ## 学员作品
 

@@ -87,7 +87,29 @@ export ANTHROPIC_API_KEY=sk-ant-your-key-here
 $env:ANTHROPIC_API_KEY = "sk-ant-your-key-here"
 ```
 
-### Step 5: Say Your First Command 🎉
+### Step 5: Start Your COO 🧠
+
+```bash
+openclaw gateway start
+```
+
+This starts OpenClaw — your AI COO. It runs in the background and manages your AI coding agents. Leave this terminal window open.
+
+> **What just happened?** OpenClaw created a workspace folder where it stores your AI's memory and configuration. Usually at `~/.openclaw/workspace/` (Mac/Linux) or `C:\Users\<YourName>\.openclaw\workspace\` (Windows). You can verify by running `openclaw status`.
+
+### Step 6: Give Your COO a Brain
+
+```bash
+# From your ceo-of-one repo directory:
+cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
+cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
+```
+
+These two files define how your COO thinks and works. Without them, your AI is a blank slate — it does exactly what you say but nothing more. With them, your COO thinks about quality, planning, and proactive problem-solving on its own.
+
+> We'll explore what's inside these files in Chapter 1. For now, just copy them.
+
+### Step 7: Say Your First Command 🎉
 
 ```bash
 acpx --approve-all --allowed-tools "Write,Bash,Read,Edit" claude exec "Create a file called hello.txt with content: Hello from CEO of One!"

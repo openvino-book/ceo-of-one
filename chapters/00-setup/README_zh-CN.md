@@ -87,7 +87,29 @@ export ANTHROPIC_API_KEY=sk-ant-你的key
 $env:ANTHROPIC_API_KEY = "sk-ant-你的key"
 ```
 
-### 第 5 步：发出你的第一条指令 🎉
+### 第 5 步：启动你的 COO 🧠
+
+```bash
+openclaw gateway start
+```
+
+启动 OpenClaw——你的 AI COO。它在后台运行，管理你的 AI 编程代理。让这个终端窗口保持开着。
+
+> **刚才发生了什么？** OpenClaw 创建了一个工作目录来存储你 AI 的记忆和配置。通常在 `~/.openclaw/workspace/`（Mac/Linux）或 `C:\Users\<你的用户名>\.openclaw\workspace\`（Windows）。运行 `openclaw status` 可以验证。
+
+### 第 6 步：给你的 COO 装上大脑
+
+```bash
+# 在你的 ceo-of-one 仓库目录下：
+cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
+cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
+```
+
+这两个文件定义了你的 COO 怎么思考和怎么工作。没有它们，你的 AI 是一张白纸——你说什么它做什么，不会多想。有了它们，你的 COO 会自己思考质量、规划和主动解决问题。
+
+> 第 1 章会深入讲这两个文件的内容。现在先复制就好。
+
+### 第 7 步：发出你的第一条指令 🎉
 
 ```bash
 acpx --approve-all --allowed-tools "Write,Bash,Read,Edit" claude exec "Create a file called hello.txt with content: Hello from CEO of One!"

@@ -105,24 +105,16 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
    git clone https://github.com/AIwork4me/ceo-of-one.git
    cd ceo-of-one
    ```
-2. **Install [Node.js](https://nodejs.org) v18+** (if you don't have it)
-3. **Install [OpenClaw](https://github.com/openclaw/openclaw)** — your AI COO:
-   ```bash
-   npm install -g openclaw
-   openclaw gateway start
-   ```
-4. **Get a [Claude API key](https://console.anthropic.com)** — powers your engineer. Set it:
-   ```bash
-   export ANTHROPIC_API_KEY=your-key-here
-   ```
-5. **Copy the COO config** into your OpenClaw workspace:
-   ```bash
-   cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
-   cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
-   ```
-6. 👉 Start with [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/)
+2. 👉 Follow [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/) — it walks you through every installation step, one by one.
 
-> **What is the OpenClaw workspace?** It's the folder where OpenClaw stores your AI's memory and configuration. Run `openclaw status` to find its path. On first launch, OpenClaw creates it automatically — usually at `~/.openclaw/workspace/` (macOS/Linux) or `C:\Users\<YourName>\.openclaw\workspace\` (Windows).
+> **In a hurry?** Here's the ultra-short version:
+> ```bash
+> npm install -g openclaw acpx @anthropic-ai/claude-code   # Install tools
+> export ANTHROPIC_API_KEY=your-key-here                       # Set API key
+> openclaw gateway start                                       # Start your COO
+> cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md       # Load COO brain
+> ```
+> But really — read Chapter 0. It explains *why* each step matters and what to do when things go wrong.
 
 ## Showcase
 
