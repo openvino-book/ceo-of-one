@@ -1,4 +1,4 @@
-name: Close Issue on PR Merge
+name: Post-merge Notification
 
 on:
   pull_request:
@@ -9,16 +9,18 @@ permissions:
   issues: write
 
 jobs:
-  close-issue:
+  notify:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
-      - name: Close related issue
+      - name: Close issue if referenced in PR
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ISSUE_NUM=$(echo "${{ github.event.pull_request.title }}" | grep -oP '#\d+' | grep -oP '\d+')
           if [ -n "$ISSUE_NUM" ]; then
+            # Close the issue (fallback if cron job missed it)
             gh issue close "$ISSUE_NUM" \
-              --comment "✅ Fixed by PR #${{ github.event.pull_request.number }} and deployed via Vercel."
+              --comment "✅ 已通过 PR #${{ github.event.pull_request.number }} 修复并部署。感谢反馈！" \
+              2>/dev/null || true
           fi
