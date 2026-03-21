@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [master]
+    paths-ignore:
+      - '**.md'
+      - '**.svg'
+      - '**.png'
+      - 'showcase/**'
+      - '.github/workflows/post-merge.yml'
+  push:
+    branches: [master]
+    paths-ignore:
+      - '**.md'
+      - '**.svg'
+      - '**.png'
+      - 'showcase/**'
+      - '.github/workflows/post-merge.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: platform
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: platform/package-lock.json
+
+      - run: npm ci
+
+      - name: Run tests
+        run: npx jest --ci --forceExit 2>&1
+
+      - name: Verify test count
+        run: |
+          RESULT=$(npx jest --ci --forceExit 2>&1 | tail -5)
+          echo "$RESULT"
+          echo "$RESULT" | grep -q "Tests:.*111 passed" || {
+            echo "❌ Test count mismatch or failures detected"
+            exit 1
+          }
+          echo "✅ All 111 tests passed"
+
+      - name: Build
+        run: npm run build 2>&1 | tail -10

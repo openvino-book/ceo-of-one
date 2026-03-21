@@ -1,0 +1,54 @@
+name: Auto Merge Fix PRs
+
+on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    branches: [master]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  auto-merge:
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'auto-fix') &&
+      github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for CI
+        uses: wait-for-checks-action@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          check-names: "test-and-build"
+          wait-interval: 30
+          timeout: 900
+
+      - name: Auto merge (squash)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{ github.event.pull_request.number }} \
+            --squash --auto --delete-branch || true
+
+      - name: Close related issue
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM=$(echo "${{ github.event.pull_request.body }} ${{ github.event.pull_request.title }}" \
+            | grep -oP '(?:Fixes|Closes|Resolves)\s+#\K\d+' | head -1)
+
+          if [ -z "$ISSUE_NUM" ]; then
+            ISSUE_NUM=$(echo "${{ github.event.pull_request.title }}" | grep -oP '#\d+' | grep -oP '\d+' | head -1)
+          fi
+
+          if [ -n "$ISSUE_NUM" ]; then
+            gh issue close "$ISSUE_NUM" \
+              --comment "✅ 已通过 PR #${{ github.event.pull_request.number }} 自动修复并部署。感谢反馈！
+
+---
+*此 PR 由自动化系统生成并合并。如修复不正确，请回复此 issue 重新打开。*"
+          fi
