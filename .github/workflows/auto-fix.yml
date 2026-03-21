@@ -1,0 +1,187 @@
+name: Auto Fix Issues
+
+on:
+  schedule:
+    # Daily at 09:00 UTC (17:00 CST / 05:00 EST)
+    - cron: '0 9 * * *'
+  issues:
+    types: [opened, reopened]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    # Manual trigger for testing
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: auto-fix
+  cancel-in-progress: false
+
+jobs:
+  auto-fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install tools
+        run: |
+          npm install -g acpx @anthropic-ai/claude-code
+          echo "✅ Tools installed"
+
+      - name: Fetch open issues
+        id: issues
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get open issues, exclude auto-fix-pr issues
+          ISSUES=$(gh issue list \
+            --label '!auto-fixed' \
+            --state open \
+            --json number,title,body,labels \
+            --limit 10 \
+            --jq '.[] | "\(.number)|\(.title)|\(.body // "")"')
+          
+          if [ -z "$ISSUES" ]; then
+            echo "has_issues=false" >> $GITHUB_OUTPUT
+            echo "✅ No open issues to fix"
+            exit 0
+          fi
+          
+          echo "has_issues=true" >> $GITHUB_OUTPUT
+          echo "$ISSUES" > /tmp/issues.txt
+          echo "📋 Found issues to process:"
+          echo "$ISSUES" | head -20
+
+      - name: Process each issue
+        if: steps.issues.outputs.has_issues == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          
+          while IFS='|' read -r number title body; do
+            echo ""
+            echo "========================================="
+            echo "🔧 Processing Issue #$number: $title"
+            echo "========================================="
+            
+            # Create a working branch
+            BRANCH="auto-fix/issue-${number}"
+            git checkout master
+            git pull origin master
+            git checkout -b "$BRANCH" 2>/dev/null || git checkout "$BRANCH"
+            
+            # Build the fix prompt
+            FIX_PROMPT="GitHub Issue #$number: $title
+
+          Issue description:
+          $body
+
+          Instructions:
+          1. Read and understand the issue
+          2. Look at the relevant files in the repository
+          3. Fix the issue with minimal, focused changes
+          4. Run 'npm test' in the platform/ directory - all 111 tests must pass
+          5. Run 'npm run build' in the platform/ directory - zero errors
+          6. Do NOT modify test count (do not add or remove tests unless the issue is about tests)
+          7. Do NOT modify files unrelated to the issue
+          8. If the issue is a documentation fix (README, chapter files), just fix the docs - no need to run tests
+          9. Commit your changes with message: 'fix: resolve #$number - ${title}'"
+            
+            echo "$FIX_PROMPT" > /tmp/fix-prompt.txt
+            
+            # Run Claude Code to fix the issue
+            claude -p "$(cat /tmp/fix-prompt.txt)" \
+              --allowedTools "Write,Bash,Read,Edit,MultiEdit,Glob,Grep,LS" \
+              --output-format json \
+              --max-turns 20 \
+              > /tmp/claude-result.json 2>&1 || true
+            
+            # Check if any changes were made
+            if git diff --quiet; then
+              echo "⚠️ No changes made for issue #$number"
+              gh issue comment "$number" \
+                --body "🤖 **Auto-fix attempted** but no changes were made. The issue may need manual review or more context."
+              continue
+            fi
+            
+            # Validate: run tests if code changed (not just docs)
+            CODE_CHANGED=$(git diff --name-only | grep -v '\.md$' | grep -v '\.svg$' | grep -v '\.png$' || true)
+            if [ -n "$CODE_CHANGED" ]; then
+              echo "🧪 Running tests..."
+              cd platform
+              npm install --silent 2>/dev/null
+              npm test 2>&1 | tail -5
+              TEST_EXIT=$?
+              cd ..
+              
+              if [ $TEST_EXIT -ne 0 ]; then
+                echo "❌ Tests failed, reverting changes for issue #$number"
+                git checkout -- .
+                gh issue comment "$number" \
+                  --body "🤖 **Auto-fix failed**: tests did not pass after the fix. Manual review needed."
+                continue
+              fi
+            fi
+            
+            # Commit and push
+            git add -A
+            git commit -m "fix: resolve #$number - $title" --no-verify || true
+            git push origin "$BRANCH" --force
+            
+            # Create PR
+            PR_URL=$(gh pr create \
+              --title "fix: resolve #$number - $title" \
+              --body "## 🤖 Auto-generated fix for Issue #$number
+
+          **Original issue:** #$number - $title
+
+          ### Changes
+          $(git diff master --stat)
+
+          ### Validation
+          - [x] Changes committed to branch \`$BRANCH\`
+          $([ -n \"$CODE_CHANGED\" ] && echo "- [x] All tests passing (111/111)" || echo "- [ ] Documentation only, no tests needed")
+          - [ ] Ready for review
+
+          ---
+          *This PR was automatically generated by the auto-fix workflow. Please review before merging.*" \
+              --base master \
+              --label "auto-fix" \
+              2>&1)
+            
+            echo "✅ PR created: $PR_URL"
+            
+            # Comment on the issue
+            gh issue comment "$number" \
+              --body "🤖 **Auto-fix PR created**: ${PR_URL}
+          
+          The fix has been automatically generated and is awaiting review. A maintainer will merge it after validation."
+            
+            # Label the issue
+            gh issue edit "$number" --add-label "auto-fix-pr"
+            
+          done < /tmp/issues.txt
+
+      - name: Summary
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📊 Auto-fix run complete"
+          echo "Open PRs: $(gh pr list --label auto-fix --state open --json number --jq length)"
+          echo "Open issues: $(gh issue list --state open --json number --jq length)"

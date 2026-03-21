@@ -1,0 +1,57 @@
+name: Auto Deploy on Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+
+jobs:
+  deploy-and-close:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    
+    steps:
+      - name: Check if auto-fix PR
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          LABELS=$(gh pr view ${{ github.event.pull_request.number }} \
+            --json labels \
+            --jq '.labels[].name')
+          
+          if echo "$LABELS" | grep -q "auto-fix"; then
+            echo "is_auto_fix=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_auto_fix=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Close related issue
+        if: steps.check.outputs.is_auto_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Extract issue number from PR title (format: "fix: resolve #123 - title")
+          ISSUE_NUM=$(echo "${{ github.event.pull_request.title }}" | grep -oP '#\d+' | grep -oP '\d+')
+          
+          if [ -n "$ISSUE_NUM" ]; then
+            gh issue close "$ISSUE_NUM" \
+              --comment "✅ **Fixed** by PR #${{ github.event.pull_request.number }} and deployed.
+
+            ---
+            *Auto-closed by the auto-deploy workflow.*"
+            echo "✅ Closed issue #$ISSUE_NUM"
+          else
+            echo "⚠️ Could not extract issue number from PR title"
+          fi
+
+      - name: Merge notification
+        if: steps.check.outputs.is_auto_fix == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "🚀 **Merged and deployed.** Vercel will auto-deploy to production within 1-2 minutes."

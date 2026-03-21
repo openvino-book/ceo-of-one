@@ -1,0 +1,42 @@
+name: Setup Labels
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    
+    steps:
+      - name: Create labels
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Auto-fix PR label (purple)
+          gh label create "auto-fix" \
+            --description "PR created by auto-fix workflow" \
+            --color "8957e5" 2>/dev/null || echo "Label 'auto-fix' already exists"
+          
+          # Auto-fix PR tracking label (gray)
+          gh label create "auto-fix-pr" \
+            --description "Issue has an auto-fix PR pending" \
+            --color "ededed" 2>/dev/null || echo "Label 'auto-fix-pr' already exists"
+          
+          # Enhancement
+          gh label create "enhancement" \
+            --description "New feature or request" \
+            --color "a2eeef" 2>/dev/null || echo "Label 'enhancement' already exists"
+          
+          # Bug
+          gh label create "bug" \
+            --description "Something isn't working" \
+            --color "d73a4a" 2>/dev/null || echo "Label 'bug' already exists"
+          
+          # Question
+          gh label create "question" \
+            --description "Further information requested" \
+            --color "d876e3" 2>/dev/null || echo "Label 'question' already exists"
+          
+          echo "✅ Labels created"
