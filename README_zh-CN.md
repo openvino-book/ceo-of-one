@@ -97,21 +97,35 @@ CEO（你）
 
 ## 快速开始
 
-1. 安装上面所有前置条件
-2. 启动 OpenClaw：`openclaw gateway start`
-3. 将 `templates/SOUL-COO.md` 复制到你的 OpenClaw 工作目录，重命名为 `SOUL.md`
-4. 将 `templates/PROCESS-COO.md` 复制到同一个目录
-5. 👉 从[第 0 章：5 分钟让 AI 听你的话](chapters/00-setup/)开始
+**完成全部课程的总成本：约 $5-15（Claude API 用量），无需订阅。**
+
+1. **克隆本仓库：**
+   ```bash
+   git clone https://github.com/AIwork4me/ceo-of-one.git
+   cd ceo-of-one
+   ```
+2. **安装 [Node.js](https://nodejs.org) v18+**（如果还没有）
+3. **安装 [OpenClaw](https://github.com/openclaw/openclaw)** — 你的 AI COO：
+   ```bash
+   npm install -g openclaw
+   openclaw gateway start
+   ```
+4. **获取 [Claude API key](https://console.anthropic.com)** — 驱动你的工程师。设置环境变量：
+   ```bash
+   export ANTHROPIC_API_KEY=your-key-here
+   ```
+5. **复制 COO 配置**到你的 OpenClaw 工作目录：
+   ```bash
+   cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
+   cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
+   ```
+6. 👉 从[第 0 章：5 分钟让 AI 听你的话](chapters/00-setup/)开始
 
 > **OpenClaw 工作目录在哪？** 运行 `openclaw status` 可以查看路径。首次启动时 OpenClaw 会自动创建，通常在 `~/.openclaw/workspace/`（macOS/Linux）或 `C:\Users\<你的用户名>\.openclaw\workspace\`（Windows）。
 
-👉 从 [第 0 章：5 分钟让 AI 听你说话](chapters/00-setup/) 开始
-
 ## 学员作品
 
-真实的普通人，用学到的能力做出来的真实产品。
-
-→ [看看一人 CEO 们做出了什么](showcase/)
+用这个方法做出了产品？[提交你的作品 →](showcase/)
 
 ## 贡献
 

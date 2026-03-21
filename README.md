@@ -29,6 +29,24 @@
 
 This open-source book teaches you how — with a real, deployed product as proof.
 
+## How It Works
+
+You play the **CEO**. You don't write code — you speak plain language.
+
+```
+You (CEO)  →  "Build me a course platform"
+                     ↓
+OpenClaw (COO)  →  Decomposes, plans, assigns, reviews
+                     ↓
+Claude Code (Engineer)  →  Writes code, runs tests, ships
+                     ↓
+You (CEO)  ←  "Done. Here's your product."
+```
+
+**OpenClaw** is an open-source AI agent platform that acts as your COO — it manages your AI coding agents, maintains context across sessions, and enforces quality standards. Think of it as the operating system for your one-person company. [Learn more →](https://github.com/openclaw/openclaw)
+
+**Claude Code** is Anthropic's AI coding agent. It writes, tests, and deploys code based on natural language instructions. You don't need to understand the code it writes. [Learn more →](https://docs.anthropic.com/en/docs/claude-code)
+
 ## What You'll Build
 
 A real, revenue-generating knowledge platform — the **"CEO of One Academy"** — from a single sentence to a deployed, paying product.
@@ -99,39 +117,37 @@ CEO (You)
 
 > 12 chapters. 111 tests. Bilingual. 1 deployed product. Zero bullshit.
 
-## Prerequisites
-
-Before you start, you need:
-
-| Tool | What it is | How to get it |
-|------|-----------|---------------|
-| **Node.js** (v18+) | JavaScript runtime | [nodejs.org](https://nodejs.org) — download LTS, install, restart terminal |
-| **OpenClaw** | Your AI COO | `npm install -g openclaw` — see [openclaw.ai](https://docs.openclaw.ai) |
-| **acpx** | Claude Code connector | `npm install -g acpx` — comes with OpenClaw |
-| **Claude API key** | Powers your engineer | [console.anthropic.com](https://console.anthropic.com) — get API key, set `ANTHROPIC_API_KEY` environment variable |
-| **OpenClaw AI key** | Powers your COO | Configure in OpenClaw after install |
-
-> **Don't know how to set environment variables?**
-> - **Windows:** Search "Environment Variables" in Start → Edit → New → `ANTHROPIC_API_KEY` = your key → Restart terminal
-> - **macOS/Linux:** `echo 'export ANTHROPIC_API_KEY=your-key' >> ~/.bashrc && source ~/.bashrc`
-
-> ⚠️ **Both API keys cost money.** Claude API usage is pay-as-you-go (~$5-15 for the full course). OpenClaw has its own pricing. This is the cost of running a one-person company — still cheaper than hiring a single developer.
-
 ## Quick Start
 
-1. Install all prerequisites above
-2. Start OpenClaw: `openclaw gateway start`
-3. Copy `templates/SOUL-COO.md` to your OpenClaw workspace as `SOUL.md`
-4. Copy `templates/PROCESS-COO.md` to the same workspace
-5. 👉 Start with [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/)
+**Total cost to complete:** ~$5-15 (Claude API usage). No subscription required.
+
+1. **Clone this repo:**
+   ```bash
+   git clone https://github.com/AIwork4me/ceo-of-one.git
+   cd ceo-of-one
+   ```
+2. **Install [Node.js](https://nodejs.org) v18+** (if you don't have it)
+3. **Install [OpenClaw](https://github.com/openclaw/openclaw)** — your AI COO:
+   ```bash
+   npm install -g openclaw
+   openclaw gateway start
+   ```
+4. **Get a [Claude API key](https://console.anthropic.com)** — powers your engineer. Set it:
+   ```bash
+   export ANTHROPIC_API_KEY=your-key-here
+   ```
+5. **Copy the COO config** into your OpenClaw workspace:
+   ```bash
+   cp templates/SOUL-COO.md ~/.openclaw/workspace/SOUL.md
+   cp templates/PROCESS-COO.md ~/.openclaw/workspace/PROCESS-COO.md
+   ```
+6. 👉 Start with [Chapter 0: Get AI to listen to you in 5 minutes](chapters/00-setup/)
 
 > **What is the OpenClaw workspace?** It's the folder where OpenClaw stores your AI's memory and configuration. Run `openclaw status` to find its path. On first launch, OpenClaw creates it automatically — usually at `~/.openclaw/workspace/` (macOS/Linux) or `C:\Users\<YourName>\.openclaw\workspace\` (Windows).
 
 ## Showcase
 
-Real products built by real readers.
-
-→ [See what one-person CEOs have built](showcase/)
+Built something with this method? [Submit your product →](showcase/)
 
 ## License
 
