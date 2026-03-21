@@ -2,7 +2,7 @@
 <a href="README.md"><img src="https://img.shields.io/badge/README-English-blue" alt="English" /></a>
 </p>
 
-# 你的 COO 有验收清单
+# 📋 你的 COO 有验收清单
 
 > "确保它能用"和一份正式的验收清单之间的区别，就是原型和产品之间的区别。
 
@@ -104,9 +104,9 @@ COO 不会拖慢你。COO 确保你不用做两遍。
 
 ---
 
-📖 **完整实验数据：** [`../experiments/03-acceptance-test/`](../experiments/03-acceptance-test/)
+📖 **完整实验数据：** [`../../experiments/03-acceptance-test/`](../../experiments/03-acceptance-test/)
 
 ---
 
-**下一篇：** [第四章 →](../04-landing-page/README_zh-CN.md) | **上一篇：** [← 第二章](../02-snake-game/README_zh-CN.md)
+**下一篇：** [🏠 第四章 →](../04-landing-page/README_zh-CN.md) | **上一篇：** [← 🎯 第二章](../02-snake-game/README_zh-CN.md)
 

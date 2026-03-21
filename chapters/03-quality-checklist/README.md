@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Your COO Has a Checklist
+# 📋 Your COO Has a Checklist
 
 > The difference between "make sure it works" and a proper acceptance checklist is the difference between a prototype and a product.
 
@@ -104,9 +104,9 @@ The COO doesn't slow you down. The COO makes sure you don't have to do it twice.
 
 ---
 
-📖 **Full experiment data:** [`../experiments/03-acceptance-test/`](../experiments/03-acceptance-test/)
+📖 **Full experiment data:** [`../../experiments/03-acceptance-test/`](../../experiments/03-acceptance-test/)
 
 ---
 
-**Next:** [Chapter 4 →](../04-landing-page/README.md) | **Previous:** [← Chapter 2](../02-snake-game/README.md)
+**Next:** [🏠 Chapter 4 →](../04-landing-page/README.md) | **Previous:** [← 🎯 Chapter 2](../02-snake-game/README.md)
 
