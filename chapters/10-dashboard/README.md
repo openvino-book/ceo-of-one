@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Know Your Numbers
+# 📊 Know Your Numbers
 
 > A dashboard turns a collection of features into a business.
 

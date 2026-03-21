@@ -4,7 +4,7 @@
 
 # Chapter 11: Graduation
 
-> [Tutorial](./README.md) · [Experiment Record](./experiment.md) · [Live Site →](https://ceo-of-one.vercel.app/graduation)
+> [Tutorial](./README.md) · [Experiment Record](./experiment.md) · [Live Site →](https://ceo.tinkerclaw.io/graduation)
 
 ---
 
@@ -27,19 +27,19 @@ This chapter's job is simple: build a graduation page that proves it. Zero new m
 
 ## 🗣️ The Journey
 
-Ten chapters. Here's what actually happened:
+Twelve chapters. Here's what actually happened:
 
 **Chapters 0–4** were setup. Environment, soul, precision, acceptance criteria, landing page. Important foundation, but no real stress-testing yet. You can't judge a system when nothing has gone wrong.
 
-**Chapter 5** was the first real test — authentication. Sixty-five tests, one bug. The COO wrote a decent prompt, but skipped structural verification. Lesson: writing good prompts isn't enough.
+**Chapter 6** was the first real test — authentication. Sixty-five tests, one bug. The COO wrote a decent prompt, but skipped structural verification. Lesson: writing good prompts isn't enough.
 
-**Chapter 6** was the crisis — payments. Three bugs plus six architecture violations that the COO didn't catch. The spec was too loose, the verification too shallow. The COO was *degrading* under complexity.
+**Chapter 7** was the crisis — payments. Three bugs plus six architecture violations that the COO didn't catch. The spec was too loose, the verification too shallow. The COO was *degrading* under complexity.
 
-**Chapter 7** was the pivot. Not because of a new tool or a better prompt template — because the CEO stopped and asked a question: **"你学到了什么？"**
+**Chapter 8** was the pivot. Not because of a new tool or a better prompt template — because the CEO stopped and asked a question: **"你学到了什么？"**
 
 That question forced an honest retrospective. The COO admitted it had been cutting corners, tightened its verification with `grep` checks on architecture rules, and delivered zero bugs.
 
-From that point on, the trajectory was clear: Ch8 (deployment, different skill, zero bugs), Ch9 (dashboard, one minor ESLint bug), Ch10 (graduation, zero bugs, one pass).
+From that point on, the trajectory was clear: Ch9 (deployment, zero bugs), Ch10 (dashboard, one ESLint bug), Ch11 (graduation, zero bugs, one pass).
 
 The product wasn't the turning point. The question was.
 
@@ -92,7 +92,7 @@ The COO config pack will get better with each project. You'll add new tools, ref
 
 This is the last page of the CEO of One handbook. But it's the first page of whatever you build next.
 
-You made it. Ten chapters, 111 tests, one deployed product, five bugs caught and fixed. More importantly: one honest conversation that changed everything.
+You made it. Twelve chapters, 111 tests, one deployed product, five bugs caught and fixed. More importantly: one honest conversation that changed everything.
 
 The methodology works. The proof is the platform you're reading this on.
 
@@ -104,5 +104,5 @@ Now go build something that's yours.
 
 ---
 
-← [Chapter 9: Dashboard](../09-dashboard/README.md) | [Experiment Record](./experiment.md)
+← [📊 Chapter 10: Dashboard](../10-dashboard/README.md) | [Experiment Record](./experiment.md)
 

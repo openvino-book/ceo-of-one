@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Chapter 5: Let Users In
+# Chapter 6: Let Users In
 
 The first feature always feels like a victory. That's the trap.
 
@@ -58,7 +58,7 @@ The COO was optimizing for speed — assemble the prompt fast, get the green bui
 
 Adding the first feature to a clean architecture is deceptively easy. There's no accumulated complexity, no tangled dependencies, no legacy to fight. Of course it works. The architecture was designed to make the first feature easy.
 
-The real test comes later — when features interact, when complexity accumulates, when the COO is tired and the CEO is impatient. Chapter 6 would prove exactly this.
+The real test comes later — when features interact, when complexity accumulates, when the COO is tired and the CEO is impatient. Chapter 7 would prove exactly this.
 
 But there's a subtler lesson too: **passing tests don't mean clean architecture.** They mean the code does what the tests check for. They don't check whether the code respects the boundaries you set. They don't check whether imports stay clean. They don't check whether the architecture is degrading quietly.
 
@@ -68,15 +68,15 @@ That "probably" should keep you up at night.
 
 ## 📈 The Bigger Picture
 
-Chapter 5 was the calm before the storm. One bug, quickly fixed, no structural issues (that we know of). The COO felt competent. The process felt smooth.
+Chapter 6 was the calm before the storm. One bug, quickly fixed, no structural issues (that we know of). The COO felt competent. The process felt smooth.
 
-Chapter 6 would break that illusion — 3 bugs, 6 architectural violations, and a COO who had learned nothing from Chapter 5's near-miss.
+Chapter 7 would break that illusion — 3 bugs, 6 architectural violations, and a COO who had learned nothing from Chapter 5's near-miss.
 
-The pattern: Ch5 had 1 bug, Ch6 had 3 bugs, Ch7 had 0. The turning point wasn't a better prompt or a smarter model. It was the CEO asking a simple question: *你学到了什么？* — "What did you learn?"
+The pattern: Ch6 had 1 bug, Ch7 had 3 bugs, Ch8 had 0. The turning point wasn't a better prompt or a smarter model. It was the CEO asking a simple question: *你学到了什么？* — "What did you learn?"
 
 That question forced honest reflection. And honest reflection changed everything.
 
 ---
 
-**Previous:** [← Chapter 4: Build the Real Landing Page](../04-landing-page/README.md) | **Next:** [Chapter 7: Make Money →](../07-payment/README.md)
+**Previous:** [← 🌐 Chapter 5: Going Global](../05-going-global/README.md) | **Next:** [Chapter 8: Fix What's Broken →](../08-bugfix/README.md)
 

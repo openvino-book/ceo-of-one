@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# This Is Wrong, Fix It
+# 🐛 This Is Wrong, Fix It
 
 ---
 
@@ -59,13 +59,13 @@ And there was a side benefit nobody planned for: testability. Because the paymen
 
 Let's look at the bug count across chapters:
 
-- Chapter 5 (auth): 1 bug
-- Chapter 6 (payment): 3 bugs
-- Chapter 7 (bugfix): 0 bugs
+- Chapter 6 (auth): 1 bug
+- Chapter 7 (payment): 3 bugs
+- Chapter 8 (bugfix): 0 bugs
 
 The difference isn't talent. The difference is process.
 
-In Chapter 7, the COO did something that wasn't done in previous chapters: the COO inspected the problem thoroughly *before* writing the specification. By the time the engineer received instructions, there was no ambiguity. Exact function signatures. Exact file permissions — which files could be changed and which couldn't. Exact validation commands to run afterward.
+In Chapter 8, the COO did something that wasn't done in previous chapters: the COO inspected the problem thoroughly *before* writing the specification. By the time the engineer received instructions, there was no ambiguity. Exact function signatures. Exact file permissions — which files could be changed and which couldn't. Exact validation commands to run afterward.
 
 When the specification is that precise, the engineer has no room to make wrong choices. Zero bugs isn't impressive — it's the natural outcome of removing ambiguity.
 
@@ -91,5 +91,5 @@ Zero bugs isn't a goal to strive for — it's a sign that your process is workin
 
 ---
 
-**Previous:** [← Chapter 7: Make Money](../07-payment/README.md) | **Next:** [Chapter 9: Ship It →](../09-deploy/README.md)
+****Previous:** [← Chapter 7: Make Money](../07-payment/README.md)/README.md) | ****Next:** [🌍 Chapter 9: Ship It →](../09-deploy/README.md)/README.md)
 

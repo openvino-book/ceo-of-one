@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Chapter 8 — The World Can See You
+# 🌍 Chapter 9 — The World Can See You
 
 > [📖 Full Experiment Record](experiment.md)
 
@@ -87,7 +87,7 @@ All our data lives in memory. Every time the server starts (and Vercel starts fr
 
 This is the moment you understand why every real application needs a database. Not because someone told you, but because your live site proved it. You deployed your code and the code works perfectly — but there's no data because you never saved any.
 
-Chapter 9 is about fixing this. You'll add a database, store your courses persistently, and build a dashboard to manage them. But the motivation comes from this chapter — from seeing the empty page and understanding *why*.
+Chapter 10 is about fixing this. You'll add a database, store your courses persistently, and build a dashboard to manage them. But the motivation comes from this chapter — from seeing the empty page and understanding *why*.
 
 ---
 
@@ -105,5 +105,5 @@ And the empty data? That's a gift. It gives you urgency. Chapter 9 isn't an abst
 
 ---
 
-**Previous:** [← Chapter 8: Fix What's Broken](../08-bugfix/README.md) | **Next:** [Chapter 10: Dashboard →](../10-dashboard/README.md)
+****Previous:** [← 🐛 Chapter 8: Fix What's Broken](../08-bugfix/README.md)/README.md) | ****Next:** [📊 Chapter 10: Dashboard →](../10-dashboard/README.md)/README.md)
 

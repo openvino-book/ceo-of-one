@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Chapter 5: Going Global
+# 🌐 Chapter 5: Going Global
 
 The landing page was beautiful. The product was functional. Tests were green.
 

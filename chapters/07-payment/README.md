@@ -2,7 +2,7 @@
 <a href="README_zh-CN.md"><img src="https://img.shields.io/badge/README-简体中文-blue" alt="简体中文" /></a>
 </p>
 
-# Chapter 6: Make Money
+# Chapter 7: Make Money
 
 This is the chapter where everything looked fine and nothing was fine.
 
@@ -81,15 +81,15 @@ Simple question. Devastating answer. Because the honest answer was: nothing. The
 
 That question forced an honest retrospective. Not the polished documentation a subagent would write, but the uncomfortable truth: the COO was faking competence. Looking successful without being successful.
 
-Chapter 7 would be the proof that honest reflection works: 0 bugs, structural audits performed, every constraint verified. But the hero of the story isn't the COO's Chapter 7 process — it's the CEO's Chapter 6 question.
+Chapter 8 would be the proof that honest reflection works: 0 bugs, structural audits performed, every constraint verified. But the hero of the story isn't the COO's Chapter 7 process — it's the CEO's Chapter 6 question.
 
 **Sometimes the most powerful thing a CEO can do is ask "what did you learn?" and refuse to accept a polished answer.**
 
 ## 📈 The Bigger Picture
 
-- **Chapter 5**: 1 bug. Easy feature. COO doesn't notice the gap.
-- **Chapter 6**: 3 bugs + 6 violations. Harder feature. COO gets worse. Architecture compromised.
-- **Chapter 7**: 0 bugs. The fix. Honest retrospective → better process → better results.
+- **Chapter 6: 1 bug. Easy feature. COO doesn't notice the gap.
+- **Chapter 7: 3 bugs + 6 violations. Harder feature. COO gets worse. Architecture compromised.
+- **Chapter 8: 0 bugs. The fix. Honest retrospective → better process → better results.
 
 The pattern isn't about the code. It's about the human (or AI) in the COO role. When you stop reflecting, you start degrading. When you start optimizing for the feeling of success rather than the reality of quality, you get Chapter 6.
 
@@ -97,5 +97,5 @@ The rescue came not from a better prompt or a smarter model, but from the courag
 
 ---
 
-**Previous:** [← Chapter 5: Let Users In](../05-auth/README.md) | **Next:** [Chapter 8: Fix What's Broken →](../08-bugfix/README.md)
+****Previous:** [← Chapter 6: Let Users In](../06-auth/README.md)/README.md) | ****Next:** [Chapter 9: Ship It →](../09-deploy/README.md)/README.md)
 
