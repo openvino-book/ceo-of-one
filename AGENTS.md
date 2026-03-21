@@ -100,3 +100,7 @@ features/dashboard/dashboard.test.ts
 ```
 
 Each test file covers the full feature (types, store, service, API routes). Run the complete suite — partial testing masks regressions.
+
+## Automated Issue Fixes
+
+This project uses an automated pipeline: GitHub issues are scanned every 4 hours by OpenClaw cron, fixed locally by Claude Code, and merged automatically. If your issue is fixed automatically, you will see a confirmation comment.
