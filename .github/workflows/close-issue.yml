@@ -1,0 +1,24 @@
+name: Close Issue on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [master]
+
+permissions:
+  issues: write
+
+jobs:
+  close-issue:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close related issue
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE_NUM=$(echo "${{ github.event.pull_request.title }}" | grep -oP '#\d+' | grep -oP '\d+')
+          if [ -n "$ISSUE_NUM" ]; then
+            gh issue close "$ISSUE_NUM" \
+              --comment "✅ Fixed by PR #${{ github.event.pull_request.number }} and deployed via Vercel."
+          fi
