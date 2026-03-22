@@ -53,19 +53,19 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
 
 | Ch | You'll Build This |
 |----|-------------------|
-| 🚀 [0-setup](chapters/00-setup/) | Environment Setup — 5 minutes, your AI team is ready |
+| 🚀 [0-setup](chapters/00-setup/) | 5 Minutes to Your AI Team — one setup, infinite possibilities |
 | 🧠 [1-soul](chapters/01-soul/) | Talk to Your AI Like a Boss — why the right sentence beats 1,000 lines of code |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | Snake Game Build — your first product |
-| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Acceptance Criteria — make AI get it right the first time |
-| 🏠 [4-landing-page](chapters/04-landing-page/) | Landing Page — this website you're looking at |
-| 🌐 [5-going-global](chapters/05-going-global/) | Going Global — make your product bilingual (i18n) |
-| 🔐 [6-auth](chapters/06-auth/) | Authentication — let users stay |
-| 💳 [7-payment](chapters/07-payment/) | Payments — start making money |
-| 🐛 [8-bugfix](chapters/08-bugfix/) | Bug Fixing — real products have bugs |
-| 🌍 [9-deploy](chapters/09-deploy/) | Deployment — show the world |
-| 📊 [10-dashboard](chapters/10-dashboard/) | Dashboard — your business dashboard |
-| 🎓 [11-graduation](chapters/11-graduation/) | Graduation — build a second product from scratch, no tutorial |
-| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | Product Flywheel — your product fixes itself automatically |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | Build a Real Product — your first working app, zero code, one sentence |
+| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Get AI Right the First Time — stop going back and forth |
+| 🏠 [4-landing-page](chapters/04-landing-page/) | Build a Website People Pay For — the same page you're looking at right now |
+| 🌐 [5-going-global](chapters/05-going-global/) | Go Global — two languages, zero extra code |
+| 🔐 [6-auth](chapters/06-auth/) | Turn Visitors into Customers — sign up, retain, grow |
+| 💳 [7-payment](chapters/07-payment/) | Start Making Money — customers pay, content unlocks |
+| 🐛 [8-bugfix](chapters/08-bugfix/) | Fix Any Bug in One Sentence — real products have bugs, you crush them |
+| 🌍 [9-deploy](chapters/09-deploy/) | Ship to the World — buy a domain, go live |
+| 📊 [10-dashboard](chapters/10-dashboard/) | See Your Business at a Glance — who signed up, who paid |
+| 🎓 [11-graduation](chapters/11-graduation/) | Build a Second Product — No Tutorial — prove you can do it again |
+| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | Your Product Fixes Itself — AI fixes bugs while you sleep |
 
 ## Why This Is Different
 

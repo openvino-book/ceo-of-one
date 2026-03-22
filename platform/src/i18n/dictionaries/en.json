@@ -92,56 +92,56 @@
     "title": "13 Chapters, From Zero to Self-Healing",
     "chapters": {
       "0": {
-        "title": "Environment Setup",
-        "desc": "5 minutes, your AI team is ready"
+        "title": "5 Minutes to Your AI Team",
+        "desc": "One setup, infinite possibilities — your AI workforce is ready"
       },
       "1": {
         "title": "Talk to Your AI Like a Boss",
         "desc": "Why the right sentence beats 1,000 lines of code"
       },
       "2": {
-        "title": "Snake Game Build",
-        "desc": "Your first product"
+        "title": "Build a Real Product",
+        "desc": "Your first working app — zero code, one sentence"
       },
       "3": {
-        "title": "Acceptance Criteria",
-        "desc": "Make AI get it right the first time"
+        "title": "Get AI Right the First Time",
+        "desc": "Stop going back and forth — make AI nail it on the first try"
       },
       "4": {
-        "title": "Landing Page",
-        "desc": "This website you are looking at"
+        "title": "Build a Website People Pay For",
+        "desc": "The same landing page you are looking at right now"
       },
       "5": {
-        "title": "Going Global",
-        "desc": "Make your product bilingual (i18n)"
+        "title": "Go Global",
+        "desc": "Two languages, zero extra code — sell to the world"
       },
       "6": {
-        "title": "Authentication",
-        "desc": "Let users stay"
+        "title": "Turn Visitors into Customers",
+        "desc": "Let users sign up and keep coming back"
       },
       "7": {
-        "title": "Payments",
-        "desc": "Start making money"
+        "title": "Start Making Money",
+        "desc": "Payments that work — customers pay, content unlocks"
       },
       "8": {
-        "title": "Bug Fixing",
-        "desc": "Real products have bugs"
+        "title": "Fix Any Bug in One Sentence",
+        "desc": "Real products have bugs — you will learn to crush them"
       },
       "9": {
-        "title": "Deployment",
-        "desc": "Show the world"
+        "title": "Ship to the World",
+        "desc": "Buy a domain, go live — the world can see your product"
       },
       "10": {
-        "title": "Dashboard",
-        "desc": "Your business dashboard"
+        "title": "See Your Business at a Glance",
+        "desc": "Who signed up, who paid, how much you made"
       },
       "11": {
-        "title": "Graduation",
-        "desc": "Build a second product from scratch — no tutorial"
+        "title": "Build a Second Product — No Tutorial",
+        "desc": "Prove you can do it again, this time on your own"
       },
       "12": {
-        "title": "Product Flywheel",
-        "desc": "Your product fixes itself — automatically"
+        "title": "Your Product Fixes Itself",
+        "desc": "While you sleep, your AI fixes bugs and ships updates"
       }
     }
   },

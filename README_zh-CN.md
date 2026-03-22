@@ -53,19 +53,19 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
 
 | 章 | 你将做出这个 |
 |---|------------|
-| 🚀 [0-setup](chapters/00-setup/) | 5 分钟，你的 AI 团队就位 |
+| 🚀 [0-setup](chapters/00-setup/) | 5 分钟，你的 AI 团队就位 — 一次配置，无限可能 |
 | 🧠 [1-soul](chapters/01-soul/) | 像老板一样跟 AI 说话 — 为什么一句说对的话胜过 1000 行代码 |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | 贪吃蛇实战 — 你的第一个产品 |
-| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 验收清单 — 让 AI 一次性做对 |
-| 🏠 [4-landing-page](chapters/04-landing-page/) | 训练营首页 — 你正在看的这个网站 |
-| 🌐 [5-going-global](chapters/05-going-global/) | 走向全球 — 让你的产品支持双语 (i18n) |
-| 🔐 [6-auth](chapters/06-auth/) | 注册登录 — 让用户留下来 |
-| 💳 [7-payment](chapters/07-payment/) | 支付功能 — 开始赚钱 |
-| 🐛 [8-bugfix](chapters/08-bugfix/) | Bug 修复实战 — 真实产品必有 bug |
-| 🌍 [9-deploy](chapters/09-deploy/) | 部署上线 — 让全世界看到 |
-| 📊 [10-dashboard](chapters/10-dashboard/) | 数据看板 — 你的业务仪表盘 |
-| 🎓 [11-graduation](chapters/11-graduation/) | 毕业项目 — 不看教程，从零做出第二个产品 |
-| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | 产品飞轮 — 你的产品自己修 bug — 全自动 |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | 做出一个真正的产品 — 零代码，一句话 |
+| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 让 AI 一次做对 — 告别反复返工 |
+| 🏠 [4-landing-page](chapters/04-landing-page/) | 做一个别人愿意付费的网站 — 就是你现在看的这个 |
+| 🌐 [5-going-global](chapters/05-going-global/) | 走向全球 — 两种语言，零额外代码 |
+| 🔐 [6-auth](chapters/06-auth/) | 把访客变成你的客户 — 注册、留存、持续回来 |
+| 💳 [7-payment](chapters/07-payment/) | 开始赚钱 — 客户付钱，内容自动解锁 |
+| 🐛 [8-bugfix](chapters/08-bugfix/) | 一句话修好任何 Bug — 真实产品必有 Bug |
+| 🌍 [9-deploy](chapters/09-deploy/) | 上线，让全世界看到 — 买域名、部署 |
+| 📊 [10-dashboard](chapters/10-dashboard/) | 一眼看清你的生意 — 谁注册了、谁付钱了 |
+| 🎓 [11-graduation](chapters/11-graduation/) | 不看教程，做出第二个产品 — 证明你能独立再来一次 |
+| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | 你的产品自己修 Bug — 你睡觉时 AI 在工作 |
 
 ## 为什么不一样
 
