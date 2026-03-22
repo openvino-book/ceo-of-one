@@ -54,7 +54,7 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
 | Ch | You'll Build This |
 |----|-------------------|
 | 🚀 [0-setup](chapters/00-setup/) | Environment Setup — 5 minutes, your AI team is ready |
-| 🧠 [1-soul](chapters/01-soul/) | The COO Soul — why saying the right thing matters 100x |
+| 🧠 [1-soul](chapters/01-soul/) | Talk to Your AI Like a Boss — why the right sentence beats 1,000 lines of code |
 | 🎯 [2-snake-game](chapters/02-snake-game/) | Snake Game Build — your first product |
 | 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Acceptance Criteria — make AI get it right the first time |
 | 🏠 [4-landing-page](chapters/04-landing-page/) | Landing Page — this website you're looking at |

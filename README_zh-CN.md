@@ -54,7 +54,7 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
 | 章 | 你将做出这个 |
 |---|------------|
 | 🚀 [0-setup](chapters/00-setup/) | 5 分钟，你的 AI 团队就位 |
-| 🧠 [1-soul](chapters/01-soul/) | COO 的灵魂 — 为什么说对一句话比学编程重要 100 倍 |
+| 🧠 [1-soul](chapters/01-soul/) | 像老板一样跟 AI 说话 — 为什么一句说对的话胜过 1000 行代码 |
 | 🎯 [2-snake-game](chapters/02-snake-game/) | 贪吃蛇实战 — 你的第一个产品 |
 | 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 验收清单 — 让 AI 一次性做对 |
 | 🏠 [4-landing-page](chapters/04-landing-page/) | 训练营首页 — 你正在看的这个网站 |

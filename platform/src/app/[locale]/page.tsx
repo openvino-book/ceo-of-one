@@ -21,7 +21,7 @@ function Hero() {
         <p className="text-sm sm:text-base text-accent font-medium mb-4 tracking-wide uppercase">
           {t('badge')}
         </p>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
           {t('title')}
         </h1>
         <p className="text-base sm:text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
