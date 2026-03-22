@@ -165,6 +165,18 @@ YOUR SPECIFIC TASK HERE
 
 ---
 
+## 🔄 The Ultimate COO: Your Product Never Sleeps
+
+Right now you have an AI that thinks like a COO. But here's where it gets interesting: a real COO doesn't just build — they *operate*. They keep the product alive after launch.
+
+In Chapter 12, you'll build a **product flywheel** — a system that monitors user feedback (GitHub issues), spawns AI agents to fix them, runs CI, deploys to production, and closes the issues. Automatically. Without you touching a single line of code.
+
+The COO soul you set up in this chapter is the foundation. The flywheel is the payoff. Between now and then, you'll learn the skills to build a product worthy of that flywheel: precision specifications, quality gates, modular architecture, and a battle-tested CI pipeline.
+
+Think of it this way: this chapter gives your COO a brain. Chapter 12 gives your COO a factory.
+
+---
+
 ## ⬅️ Previous: [📋 Chapter 0 — Get AI to Listen to You](../00-setup/) | ➡️ Next: [🎯 Chapter 2 — Build a Snake game with one sentence](../02-snake-game/)
 
 Now your AI thinks like a COO. In Chapter 2, you'll test your new power by building a playable Snake game — with just one sentence.

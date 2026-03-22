@@ -64,11 +64,11 @@
     },
     "result": {
       "icon": "🚀",
-      "title": "Product ships, you own 100% equity"
+      "title": "Product ships, you own 100% equity — and it fixes itself"
     }
   },
   "courseOutline": {
-    "title": "11 Chapters, From Zero to Shipped",
+    "title": "12 Chapters, From Zero to Self-Healing",
     "chapters": {
       "1": {
         "title": "Environment Setup",
@@ -111,6 +111,10 @@
         "desc": "Your business dashboard"
       },
       "11": {
+        "title": "Product Flywheel",
+        "desc": "Your product fixes itself — automatically"
+      },
+      "12": {
         "title": "Graduation Project",
         "desc": "From idea to revenue"
       }
