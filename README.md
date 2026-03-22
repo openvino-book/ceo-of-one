@@ -55,7 +55,7 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
 |----|-------------------|
 | 🚀 [0-setup](chapters/00-setup/) | 5 Minutes to Your AI Team — one setup, infinite possibilities |
 | 🧠 [1-soul](chapters/01-soul/) | Talk to Your AI Like a Boss — why the right sentence beats 1,000 lines of code |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | Build a Real Product — your first working app, zero code, one sentence |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | Build Your First App with Your Own Hands — zero code, one sentence |
 | 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Get AI Right the First Time — stop going back and forth |
 | 🏠 [4-landing-page](chapters/04-landing-page/) | Build a Website People Pay For — the same page you're looking at right now |
 | 🌐 [5-going-global](chapters/05-going-global/) | Go Global — two languages, zero extra code |

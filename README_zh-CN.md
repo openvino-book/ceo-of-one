@@ -55,7 +55,7 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
 |---|------------|
 | 🚀 [0-setup](chapters/00-setup/) | 5 分钟，你的 AI 团队就位 — 一次配置，无限可能 |
 | 🧠 [1-soul](chapters/01-soul/) | 像老板一样跟 AI 说话 — 为什么一句说对的话胜过 1000 行代码 |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | 做出一个真正的产品 — 零代码，一句话 |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | 亲手做出你的第一个应用 — 零代码，一句话 |
 | 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 让 AI 一次做对 — 告别反复返工 |
 | 🏠 [4-landing-page](chapters/04-landing-page/) | 做一个别人愿意付费的网站 — 就是你现在看的这个 |
 | 🌐 [5-going-global](chapters/05-going-global/) | 走向全球 — 两种语言，零额外代码 |
