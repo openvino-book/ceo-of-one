@@ -123,3 +123,11 @@ Built something with this method? [Submit your product →](showcase/)
 ## License
 
 [MIT](LICENSE) ❤️
+
+---
+
+<p align="center">
+  <img src="assets/aiwork4me.jpg" alt="AIwork4me QR Code" width="200">
+  <br>
+  <strong>Scan to follow</strong> — let's achieve AI work for me together!
+</p>

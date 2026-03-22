@@ -112,3 +112,11 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
 ## 协议
 
 [MIT](LICENSE) ❤️
+
+---
+
+<p align="center">
+  <img src="assets/aiwork4me.jpg" alt="AIwork4me QR Code" width="200">
+  <br>
+  <strong>扫码关注</strong> — 一起实现 AI work for me！
+</p>
