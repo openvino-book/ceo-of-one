@@ -53,19 +53,19 @@ Claude Code（工程师）→ 写代码、跑测试、改 bug、上线
 
 | 章 | 你将做出这个 |
 |---|------------|
-| 🚀 [0-setup](chapters/00-setup/) | 5 分钟后你能跟 AI 对话了 |
-| 🧠 [1-soul](chapters/01-soul/) | 给 AI 装上一个顶级 COO 的大脑 |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | 一句话做出一个能玩的贪吃蛇 |
-| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 让 AI 自己检查工作质量，不用你盯着 |
-| 🏠 [4-landing-page](chapters/04-landing-page/) | 训练营首页——先做英文版 |
-| 🌐 [5-going-global](chapters/05-going-global/) | 让产品支持中英文双语（next-intl 国际化） |
-| 🔐 [6-auth](chapters/06-auth/) | 学员可以注册、浏览课程 |
-| 💳 [7-payment](chapters/07-payment/) | 学员付钱 → 立刻解锁内容 |
-| 🐛 [8-bugfix](chapters/08-bugfix/) | 学会说"这不对，改"——一句话修好 bug |
-| 🌍 [9-deploy](chapters/09-deploy/) | 买域名、上线，全世界都能访问 |
-| 📊 [10-dashboard](chapters/10-dashboard/) | 看到谁注册了、谁付钱了、赚了多少 |
-| 🎓 [11-graduation](chapters/11-graduation/) | 不看教程，从零做出第二个产品 |
-| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | 你的产品自己修 bug — 全自动 |
+| 🚀 [0-setup](chapters/00-setup/) | 5 分钟，你的 AI 团队就位 |
+| 🧠 [1-soul](chapters/01-soul/) | COO 的灵魂 — 为什么说对一句话比学编程重要 100 倍 |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | 贪吃蛇实战 — 你的第一个产品 |
+| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | 验收清单 — 让 AI 一次性做对 |
+| 🏠 [4-landing-page](chapters/04-landing-page/) | 训练营首页 — 你正在看的这个网站 |
+| 🌐 [5-going-global](chapters/05-going-global/) | 走向全球 — 让你的产品支持双语 (i18n) |
+| 🔐 [6-auth](chapters/06-auth/) | 注册登录 — 让用户留下来 |
+| 💳 [7-payment](chapters/07-payment/) | 支付功能 — 开始赚钱 |
+| 🐛 [8-bugfix](chapters/08-bugfix/) | Bug 修复实战 — 真实产品必有 bug |
+| 🌍 [9-deploy](chapters/09-deploy/) | 部署上线 — 让全世界看到 |
+| 📊 [10-dashboard](chapters/10-dashboard/) | 数据看板 — 你的业务仪表盘 |
+| 🎓 [11-graduation](chapters/11-graduation/) | 毕业项目 — 不看教程，从零做出第二个产品 |
+| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | 产品飞轮 — 你的产品自己修 bug — 全自动 |
 
 ## 为什么不一样
 

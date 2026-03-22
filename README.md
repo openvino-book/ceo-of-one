@@ -53,19 +53,19 @@ A real, revenue-generating knowledge platform — the **"CEO of One Academy"** �
 
 | Ch | You'll Build This |
 |----|-------------------|
-| 🚀 [0-setup](chapters/00-setup/) | Get AI to listen to you in 5 minutes |
-| 🧠 [1-soul](chapters/01-soul/) | Give AI a top-tier COO brain |
-| 🎯 [2-snake-game](chapters/02-snake-game/) | Build a playable Snake game — with one sentence |
-| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Make AI check its own work (so you don't have to) |
-| 🏠 [4-landing-page](chapters/04-landing-page/) | Your academy's homepage — in English first |
-| 🌐 [5-going-global](chapters/05-going-global/) | Make your product bilingual (i18n with next-intl) |
-| 🔐 [6-auth](chapters/06-auth/) | Students can sign up and browse courses |
-| 💳 [7-payment](chapters/07-payment/) | Students pay → content unlocks instantly |
-| 🐛 [8-bugfix](chapters/08-bugfix/) | Learn to say "this is wrong, fix it" — precisely |
-| 🌍 [9-deploy](chapters/09-deploy/) | Buy a domain, deploy, the world can see it |
-| 📊 [10-dashboard](chapters/10-dashboard/) | See who signed up, who paid, how much you made |
-| 🎓 [11-graduation](chapters/11-graduation/) | Build a second product from scratch — no tutorial |
-| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | Your product fixes itself — automatically |
+| 🚀 [0-setup](chapters/00-setup/) | Environment Setup — 5 minutes, your AI team is ready |
+| 🧠 [1-soul](chapters/01-soul/) | The COO Soul — why saying the right thing matters 100x |
+| 🎯 [2-snake-game](chapters/02-snake-game/) | Snake Game Build — your first product |
+| 📝 [3-quality-checklist](chapters/03-quality-checklist/) | Acceptance Criteria — make AI get it right the first time |
+| 🏠 [4-landing-page](chapters/04-landing-page/) | Landing Page — this website you're looking at |
+| 🌐 [5-going-global](chapters/05-going-global/) | Going Global — make your product bilingual (i18n) |
+| 🔐 [6-auth](chapters/06-auth/) | Authentication — let users stay |
+| 💳 [7-payment](chapters/07-payment/) | Payments — start making money |
+| 🐛 [8-bugfix](chapters/08-bugfix/) | Bug Fixing — real products have bugs |
+| 🌍 [9-deploy](chapters/09-deploy/) | Deployment — show the world |
+| 📊 [10-dashboard](chapters/10-dashboard/) | Dashboard — your business dashboard |
+| 🎓 [11-graduation](chapters/11-graduation/) | Graduation — build a second product from scratch, no tutorial |
+| 🔄 [12-product-flywheel](chapters/12-product-flywheel/) | Product Flywheel — your product fixes itself automatically |
 
 ## Why This Is Different
 
